@@ -71,3 +71,7 @@
 - `ls ???[1-5]` = Em um cenário que estou considerando que os 3 primeiros caracteres seriam ou arq ou tmp e eu preciso encontrar os arquivos dentro de um intervalo, no caso de 1 a 5. 
 
 - `ls arq[1,5]`= Para procurar arquivos que começam com arq e tenham 1 e 5. 
+
+## Filesystem Hierarchy Standard (padrão para sistema de arquivos hierárquico) ou FHS
+![image](https://user-images.githubusercontent.com/19577547/180101809-2ac41b67-4f77-4bde-a891-dd5001f8ced5.png)
+

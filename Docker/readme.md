@@ -98,7 +98,8 @@
 
 ## Construindo nossas próprias imagens
 Precisamos criar um arquivo chamado dockerfile em nosso programa com os seguintes exemplos de configuração:
-![image](https://user-images.githubusercontent.com/19577547/141155742-dc5b3b6a-95c2-4c4c-a128-923e16518bf1.png)
+![image](https://user-images.githubusercontent.com/19577547/180102467-e59a711c-4165-4e09-88f0-0f6960c52df1.png)
+
 
 	FROM node:latest
 	MAINTAINER Vicente

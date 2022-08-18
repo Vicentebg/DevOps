@@ -1,2 +1,2 @@
 # DevOps
-Repositório com comandos utilizados em Linux/Docker/Prompt
+Repositório com os principais comandos de tecnologias utilizadas no dia a dia.

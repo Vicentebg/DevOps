@@ -70,8 +70,34 @@ resource "aws_instance" "app_server" {
 
 2 - Agora iremos rodar nosso servidor web com o comando nohup `busybox httpd -f -p 8080 &`
 
-3 - Agora vamos na nossa instância na AWS e iremos pegar o IPv4 dela copia-lo, jogar no navegador e ficará mais ou menos isso http://54.187.241.59:8080/
+3 - Agora vamos na nossa instância na AWS e iremos pegar o IPv4 dela copia-lo, jogar no navegador e colocar a porta em que criamos o busybox e ficará mais ou menos isso 54.187.241.55:8080
 
+`PLUS: Existem dois comandos para te ajudar que são "terraform fmt" ele formata seu arquivo automáticamente e te retorna o que foi modificado e também tem o comando "terraform validate" que garante se o seu código de configuração está válido.`
 
+# Ansible com Terraform
+1 - Para utilizar o Ansible no Windows precisaremos instalar o WSL:
 
-PLUS: Existem dois comandos para te ajudar que são "terraform fmt" ele formata seu arquivo automáticamente e te retorna o que foi modificado e também tem o comando "terraform validate" que garante se o seu código de configuração está válido.
+Abra o PowerShell em modo Administrador e rode o comando  `wsl --instal -d Ubuntu`
+<br> Reinicie o computador e execute o Ubuntu for Windows, rode dentro dele os comandos `sudo apt update && sudo apt install ansible`
+
+2 - Agora vamos voltar para nossa pasta aonde está o arquivo "main.tf", iremos criar mais dois arquivos: "hosts.yml" e "playbook.yml" 
+
+#### **hosts.yml**
+```yaml
+[terraform-ansible]
+18.236.162.130
+```
+#### **playbook.yml**
+```yaml
+- hosts: terraform-ansible
+  tasks:
+  - name: criando arquivo
+    copy: 
+    dest: /home/ubuntu/index.html
+    content: <h1> Feito com terraform e ansible </h1>
+  - name: criando servidor
+    shell: "nohup busybox httpd -f -p 8080 &"
+```
+
+Obs: O IP inserido no arquivo hosts vai ser de acordo com o IPv4 que está em sua instancia.
+

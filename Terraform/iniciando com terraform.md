@@ -80,7 +80,7 @@ resource "aws_instance" "app_server" {
 Abra o PowerShell em modo Administrador e rode o comando  `wsl --instal -d Ubuntu`
 <br> Reinicie o computador e execute o Ubuntu for Windows, rode dentro dele os comandos `sudo apt update && sudo apt install ansible`
 
-2 - Agora vamos voltar para nossa pasta aonde está o arquivo "main.tf", iremos criar mais dois arquivos: "hosts.yml" e "playbook.yml" 
+2 - Vamos voltar para nossa pasta aonde está o arquivo "main.tf", iremos criar mais dois arquivos: "hosts.yml" e "playbook.yml" 
 
 #### **hosts.yml**
 ```yaml
@@ -93,11 +93,11 @@ Abra o PowerShell em modo Administrador e rode o comando  `wsl --instal -d Ubunt
   tasks:
   - name: criando arquivo
     copy: 
-    dest: /home/ubuntu/index.html
-    content: <h1> Feito com terraform e ansible </h1>
+      dest: /home/ubuntu/index.html
+      content: <h1> Feito com terraform e ansible </h1>
   - name: criando servidor
     shell: "nohup busybox httpd -f -p 8080 &"
 ```
-
-Obs: O IP inserido no arquivo hosts vai ser de acordo com o IPv4 que está em sua instancia.
+ Agora dentro da máquina Ubuntu execute o comando `cd../../mnt/c` e agora rode o comando `ansible-playbook playbook.yml -u ubuntu --private-key iac-alura.pem -i hosts.yml`
+<br>Obs: O IP inserido no arquivo hosts vai ser de acordo com o IPv4 que está em sua instancia.
 

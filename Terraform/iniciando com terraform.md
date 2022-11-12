@@ -51,7 +51,7 @@ resource "aws_instance" "app_server" {
   }
 }
 ```
-3 - Caso estejamos no linux podemos executar o comando "chmod 400 iac-alura.pem", caso estejamos no Windows precisamos clicar com o botão direito no arquivo pem, ir em Propriedades>Segurança>Avançadas>Desabilitar heranças>Converter as permissões herdadas em permissöes explícitas no objeto.
+3 - Caso estejamos no linux podemos executar o comando `chmod 400 iac-alura.pem`, caso estejamos no Windows precisamos clicar com o botão direito no arquivo pem, ir em Propriedades>Segurança>Avançadas>Desabilitar heranças>Converter as permissões herdadas em permissöes explícitas no objeto.
 
 4 - Agora vamos voltar para a AWS em Redes e segurança>Security groups>Regras de entrada>Editar regras de entrada>Adicionar regra (Regras de entrada) e Redes e segurança>Security groups>Regras de saída>Editar regras de saída>Adicionar regra (Regras de saída)
 
@@ -99,5 +99,9 @@ Abra o PowerShell em modo Administrador e rode o comando  `wsl --instal -d Ubunt
     shell: "nohup busybox httpd -f -p 8080 &"
 ```
  Agora dentro da máquina Ubuntu execute o comando `cd../../mnt/c` e agora rode o comando `ansible-playbook playbook.yml -u ubuntu --private-key iac-alura.pem -i hosts.yml`
-<br>Obs: O IP inserido no arquivo hosts vai ser de acordo com o IPv4 que está em sua instancia.
+<br>Obs: O IP inserido no arquivo hosts vai ser de acordo com o IPv4(Público) que está em sua instancia.
+
+## Plus
+Se estiver no Windows provavelmente dará problema na chave .pem, você terá que configurar o arquivo para de funcione, você pode tentar entrar em modo root para rodar o comando ssh via WSL, caso de errado pode-se tentar rodar o comando chmod 400 iac-alura.pem ou chmod 600 iac-alura.pem
+
 

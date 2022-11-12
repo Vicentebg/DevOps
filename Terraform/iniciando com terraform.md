@@ -98,7 +98,7 @@ Abra o PowerShell em modo Administrador e rode o comando  `wsl --instal -d Ubunt
   - name: criando servidor
     shell: "nohup busybox httpd -f -p 8080 &"
 ```
- Agora dentro da máquina Ubuntu execute o comando `cd../../mnt/c` e agora rode o comando `ansible-playbook playbook.yml -u ubuntu --private-key iac-alura.pem -i hosts.yml`
+ Agora dentro da máquina Ubuntu execute o comando `cd../../mnt/c` e agora rode o comando `sudo ansible-playbook playbook.yml -u ubuntu --private-key iac-alura.pem -i hosts.yml`
 <br>Obs: O IP inserido no arquivo hosts vai ser de acordo com o IPv4(Público) que está em sua instancia.
 
 `Plus: Se estiver no Windows provavelmente dará problema na chave .pem, você terá que configurar o arquivo para de funcione, você pode tentar entrar em modo root para rodar o comando ssh via WSL, caso de errado pode-se tentar rodar o comando chmod 400 iac-alura.pem ou chmod 600 iac-alura.pem`

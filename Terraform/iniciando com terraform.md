@@ -104,4 +104,9 @@ Abra o PowerShell em modo Administrador e rode o comando  `wsl --instal -d Ubunt
 ## Plus
 Se estiver no Windows provavelmente dará problema na chave .pem, você terá que configurar o arquivo para de funcione, você pode tentar entrar em modo root para rodar o comando ssh via WSL, caso de errado pode-se tentar rodar o comando chmod 400 iac-alura.pem ou chmod 600 iac-alura.pem
 
+![image](https://user-images.githubusercontent.com/19577547/201449639-cbf4811f-dec4-4004-afb8-06d410a4c818.png)
+
+![image](https://user-images.githubusercontent.com/19577547/201449700-1f116b5a-c029-4246-8fa6-123505420bd3.png)
+
+![image](https://user-images.githubusercontent.com/19577547/201449718-4251bec8-2751-4875-ab4d-093673bfe0ec.png)
 

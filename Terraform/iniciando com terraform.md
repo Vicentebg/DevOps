@@ -110,9 +110,9 @@ Imagem 1
 
 ![image](https://user-images.githubusercontent.com/19577547/201449639-cbf4811f-dec4-4004-afb8-06d410a4c818.png)
 
-Imagem 2
+Imagem 2 <br>
 ![image](https://user-images.githubusercontent.com/19577547/201449700-1f116b5a-c029-4246-8fa6-123505420bd3.png)
 
-Imagem 3
+Imagem 3 <br>
 ![image](https://user-images.githubusercontent.com/19577547/201449718-4251bec8-2751-4875-ab4d-093673bfe0ec.png)
 

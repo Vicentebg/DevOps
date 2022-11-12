@@ -101,12 +101,18 @@ Abra o PowerShell em modo Administrador e rode o comando  `wsl --instal -d Ubunt
  Agora dentro da máquina Ubuntu execute o comando `cd../../mnt/c` e agora rode o comando `ansible-playbook playbook.yml -u ubuntu --private-key iac-alura.pem -i hosts.yml`
 <br>Obs: O IP inserido no arquivo hosts vai ser de acordo com o IPv4(Público) que está em sua instancia.
 
-## Plus
-Se estiver no Windows provavelmente dará problema na chave .pem, você terá que configurar o arquivo para de funcione, você pode tentar entrar em modo root para rodar o comando ssh via WSL, caso de errado pode-se tentar rodar o comando chmod 400 iac-alura.pem ou chmod 600 iac-alura.pem
+`Plus: Se estiver no Windows provavelmente dará problema na chave .pem, você terá que configurar o arquivo para de funcione, você pode tentar entrar em modo root para rodar o comando ssh via WSL, caso de errado pode-se tentar rodar o comando chmod 400 iac-alura.pem ou chmod 600 iac-alura.pem`
+
+Você irá até o arquivo que possuí a chave e irá clicar botão direito Propriedades>Segurança>Avançadas, irá deletar todos os usuários e irá criar um conforme a imagem 2.
+Na imagem 3 mostra como se deve ficar as permissões do arquivo para visualizar as permissões basta dar o comando `grep || ll`
+
+Imagem 1
 
 ![image](https://user-images.githubusercontent.com/19577547/201449639-cbf4811f-dec4-4004-afb8-06d410a4c818.png)
 
+Imagem 2
 ![image](https://user-images.githubusercontent.com/19577547/201449700-1f116b5a-c029-4246-8fa6-123505420bd3.png)
 
+Imagem 3
 ![image](https://user-images.githubusercontent.com/19577547/201449718-4251bec8-2751-4875-ab4d-093673bfe0ec.png)
 

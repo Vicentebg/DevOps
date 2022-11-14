@@ -161,8 +161,70 @@ Logo após fazer todo o procedimento padrão, vamos acessar a máquina via SSH e
 
 Agora vamos iniciar um projeto dentro da venv com o comando `djando-admin startproject setup .` e agora vamos rodar o comando `python manage.py runserver 0.0.0.0:8000`. Agora podemos pegar o IPv4 da nossa máquina colar ele no navegador passando por exemplo: 43.23.42.12:8000.
 
-Essa página que está aparecendo nos alertas que possuem hosts que não estão permitidos no nosso django, então vamos ter que dar a permissão, para isso pare o servidor e acesse `/home/ubuntu/tcc/setup` e agora `vi settings.py`
+Essa página que está aparecendo nos alertas que possuem hosts que não estão permitidos(DisallowedHost) no nosso django, então vamos ter que dar a permissão, para isso pare o servidor e acesse `/home/ubuntu/tcc/setup` e agora `vi settings.py`
 
-Dentro do arquivo settings.py vamos edita-lo na parte ALLOWED_HOSTS, ficará igual na imagem 1
+Dentro do arquivo settings.py vamos edita-lo na parte ALLOWED_HOSTS, ficará igual na abaixo:
 
 ![image](https://user-images.githubusercontent.com/19577547/201756129-68ac8983-bd1c-4616-b946-ce9a5deae391.png)
+
+Após alterar está configuração, vamos salvar o arquivo e voltar uma pasta e executar o comando `python manage.py runserver 0.0.0.0:8000` novamente e agora será apresentado uma tela de sucesso para gente.
+
+Agora vamos sair da venv utilizando o comando `deactivate`. Vamos também utilizar o comando `rm -rf manager.py setup/` para limpar nossa VM.
+
+# Iniciando projeto via Ansible
+Agora vamos configurar um novo playbook com os passos que fizemos manualmente anteriormente, porém vamos utilizar a tag shell para rodar estes comandos, lembrando que o ; é para executar dois comandos seguidos no mesmo shell, se não utilizarmos o ; ele rodará um comando independente do outro, não salvando seu estado. Neste caso queremos que ele tenha essa dependencia e então por isso utilizaremos o ponto e vírgula.
+```yaml
+- hosts: terraform-ansible
+  tasks:
+  - name: Instalando python3 e virtualenv
+    apt:
+      pkg:
+      - python3
+      - virtualenv
+      update_cache: yes
+    become: yes
+  - name: Instalando dependencias com pip (Djando e Django Rest)
+    pip:
+      virtualenv: /home/ubuntu/tcc/venv
+      name:
+        - django
+        - djangorestframework
+  - name: Iniciando projeto
+    shell: '. /home/ubuntu/tcc/venv/bin/activate; django-admin startproject setup /home/ubuntu/tcc'
+  ```
+
+  Agora só repetir os passos de executar o playbook novamente e entrar via SSH.
+
+  Agora navegando dentro da VM podemos ver que o manager.py e a pasta setup foram criadas automáticamente.
+
+Iremos agora deixar que o nosso playbook faça toda a etapa anterior que fizemos manualmente, como alterar o ALLOWED_HOSTS.
+
+```yaml
+- hosts: terraform-ansible
+  tasks:
+  - name: Instalando python3 e virtualenv
+    apt:
+      pkg:
+      - python3
+      - virtualenv
+      update_cache: yes
+    become: yes
+  - name: Instalando dependencias com pip (Djando e Django Rest)
+    pip:
+      virtualenv: /home/ubuntu/tcc/venv
+      name:
+        - django
+        - djangorestframework
+  - name: Iniciando projeto
+    shell: '. /home/ubuntu/tcc/venv/bin/activate; django-admin startproject setup /home/ubuntu/tcc'
+  - name: Alterando o host do settings
+    lineinfile:
+      path: /home/ubuntu/tcc/setup/settings.py
+      regexp: 'ALLOWED_HOSTS'
+      line: 'ALLOWED_HOSTS = ["*"]'
+      backrefs: yes
+  ```
+Para se alterar alguma coisa dentro de um arquivo precisamos utilizar o comando lineinfile do Ansible, em seguida vamos passar o arquivo do arquivo a ser editado no caso settings.py, como boa prática passamos todo o caminho para não ocorrer problemas. No comando regexp vamos colocar o que estamos buscando que no caso é ALLOWED_HOSTS e logo abaixo com o comando line vamos colocar o que queremos mudar, ou seja ele vai buscar pela linha onde contém ALLOWED_HOSTS e mudar a para ALLOWED_HOSTS = ["*"], também utilizados aspas duplas dentro do colchetes para não "atrapalhar" o funcionamento do comando, então podemos partir do princípio de aspas simples fora, utiliza-se aspas duplas dentro ou vice versa.
+ O parametro backrefs serve para se ele não achar nada dentro do nosso arquivo ele não irá fazer nada.
+
+ Bom agora basta acessar a máquina e certificar de que tudo foi criado corretamente!

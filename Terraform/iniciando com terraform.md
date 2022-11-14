@@ -162,3 +162,7 @@ Logo após fazer todo o procedimento padrão, vamos acessar a máquina via SSH e
 Agora vamos iniciar um projeto dentro da venv com o comando `djando-admin startproject setup .` e agora vamos rodar o comando `python manage.py runserver 0.0.0.0:8000`. Agora podemos pegar o IPv4 da nossa máquina colar ele no navegador passando por exemplo: 43.23.42.12:8000.
 
 Essa página que está aparecendo nos alertas que possuem hosts que não estão permitidos no nosso django, então vamos ter que dar a permissão, para isso pare o servidor e acesse `/home/ubuntu/tcc/setup` e agora `vi settings.py`
+
+Dentro do arquivo settings.py vamos edita-lo na parte ALLOWED_HOSTS, ficará igual na imagem 1
+
+![image](https://user-images.githubusercontent.com/19577547/201756129-68ac8983-bd1c-4616-b946-ce9a5deae391.png)

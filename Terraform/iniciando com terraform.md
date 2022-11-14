@@ -116,3 +116,49 @@ Imagem 2 <br>
 Imagem 3 <br>
 ![image](https://user-images.githubusercontent.com/19577547/201449718-4251bec8-2751-4875-ab4d-093673bfe0ec.png)
 
+# Ansible e Python
+
+Agora vamos criar um outro playbook
+
+#### **playbook.yml**
+```yaml
+- hosts: terraform-ansible
+  tasks:
+  - name: Instalando python3 e virtualenv
+    apt:
+      pkg:
+      - python3
+      - virtualenv
+      update_cache: yes
+  become: yes
+```
+Vamos mudar o nome da nossa instancia no arquivo `main.tf` irei colocar Ansible e Python, em seguida vamos rodar o comando `terraform destroy` logo após acabar essa tarefa iremos rodar `terraform apply` , iremos até a instancia nova criada, iremos pegar o IPv4 público dela e coloca-lo no nosso arquivo `hosts.yml` , e agora vamos para nosso Ubuntu WSL e vamos rodar novamente o comando `sudo ansible-playbook playbook.yml -u ubuntu --private-key iac-alura.pem -i hosts.yml` , logo após o termino podemos realizar o acesso via ssh da máquian e rodar os comandos `python3 --version` e `virtualenv --version` para verificar se foi instalado corretamente na nossa máquina
+
+# Ansible com virtualenv e django
+
+Agora vamos criar um ambiente de desenvolvimento o django, iremos alterar nosso playbook conforme mostra abaixo:
+
+#### **playbook.yml**
+```yaml
+- hosts: terraform-ansible
+  tasks:
+  - name: Instalando python3 e virtualenv
+    apt:
+      pkg:
+      - python3
+      - virtualenv
+      update_cache: yes
+    become: yes
+  - name: Instalando dependencias com pip (Djando e Django Rest)
+    pip:
+      virtualenv: /home/ubuntu/tcc/venv
+      name:
+        - django
+        - djangorestframework
+```
+
+Logo após fazer todo o procedimento padrão, vamos acessar a máquina via SSH e verificar se a pasta tcc foi criada e agora vamos rodar o comando `. venv/bin/activate` e estaremos dentro do "ambiente virtual" criado pela venv, vamos rodar também para averiguar os pacotes instalados na nossa venv o comando `pip freeze` e com isso iremos certificar as versões dos pacotes django.
+
+Agora vamos iniciar um projeto dentro da venv com o comando `djando-admin startproject setup .` e agora vamos rodar o comando `python manage.py runserver 0.0.0.0:8000`. Agora podemos pegar o IPv4 da nossa máquina colar ele no navegador passando por exemplo: 43.23.42.12:8000.
+
+Essa página que está aparecendo nos alertas que possuem hosts que não estão permitidos no nosso django, então vamos ter que dar a permissão, para isso pare o servidor e acesse `/home/ubuntu/tcc/setup` e agora `vi settings.py`

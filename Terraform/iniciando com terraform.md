@@ -68,7 +68,7 @@ resource "aws_instance" "app_server" {
 # Criando um servidor web
 1 - Após realizarmos o acesso SSH iremos dar o seguinte comando `echo "<h1> Ola mundo </h1>" > index.html` depois podemas dar um `cat index.html` para verificar se foi criado corretamente.
 
-2 - Agora iremos rodar nosso servidor web com o comando nohup `busybox httpd -f -p 8080 &`
+2 - Agora iremos rodar nosso servidor web com o comando `nohup busybox httpd -f -p 8080 &`
 
 3 - Agora vamos na nossa instância na AWS e iremos pegar o IPv4 dela copia-lo, jogar no navegador e colocar a porta em que criamos o busybox e ficará mais ou menos isso 54.187.241.55:8080
 

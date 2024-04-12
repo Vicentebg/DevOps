@@ -1,13 +1,11 @@
 # Comandos Docker
 
-## [Primeiros Comandos Docker](https://github.com/Vicentebg/DevOps/blob/main/Python/operadores_aritmeticos.py)
+## [Primeiros Comandos Docker](https://github.com/Vicentebg/DevOps/blob/main/Docker/primeiros_comandos_de_docker.md)
 
-## [Principais Comandandos Utilizados](https://github.com/Vicentebg/DevOps/blob/main/Python/operadores_aritmeticos.py)
+## [Principais Comandandos Utilizados](https://github.com/Vicentebg/DevOps/blob/main/Docker/principais_comandos_utilizados.md)
 
-## [Rodando códigos em Containers](https://github.com/Vicentebg/DevOps/blob/main/Python/operadores_aritmeticos.py)
+## [Rodando códigos em Containers](https://github.com/Vicentebg/DevOps/blob/main/Docker/rodando_codigo_em_container.md)
 
-## [Primeiros comandos docker](https://github.com/Vicentebg/DevOps/blob/main/Python/operadores_aritmeticos.py)
+## [Comandos Docker Intermediários](https://github.com/Vicentebg/DevOps/blob/main/Docker/comandos_docker_intermediario.md)
 
-## [Comandos Docker Intermediários](https://github.com/Vicentebg/DevOps/blob/main/Python/operadores_aritmeticos.py)
-
-## [Docker compose](https://github.com/Vicentebg/DevOps/blob/main/Python/operadores_aritmeticos.py)
+## [Docker compose](https://github.com/Vicentebg/DevOps/blob/main/Docker/docker-compose.md)

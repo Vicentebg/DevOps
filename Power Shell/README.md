@@ -1,35 +1,36 @@
 # Prompt de Comando ou Power Shell
-`echo Hello World` - Escreve no terminal
 
-`dir` - Mostrar os arquivos de dentro da pasta
+- `echo Hello World` - Escreve no terminal
 
-`cd Desktop` - Entrar dentro de alguma pasta
+- `dir` - Mostrar os arquivos de dentro da pasta
 
-`mkdir Dicas` - Para criar pasta
+- `cd Desktop` - Entrar dentro de alguma pasta
 
-`rmdir Dicas` - Para deletar a pasta
+- `mkdir Dicas` - Para criar pasta
 
-`move dica.txt Dicas` - Para mover um arquivo
+- `rmdir Dicas` - Para deletar a pasta
 
-`type dica.txt` - Para ler um arquivo
+- `move dica.txt Dicas` - Para mover um arquivo
 
-`echo O comando cd alterna entre pastas! > dica4.txt` - Para escrever a mensagem em algum arquivo, o > redireciona o lugar em que quero escrever, caso o arquivo não exista ele irá criar, caso eu queira inserir dados em algum arquivo já existente, posso utilizar o >>
+- `type dica.txt` - Para ler um arquivo
 
-`cd ..` - Para voltar um pasta
+- `echo O comando cd alterna entre pastas! > dica4.txt` - Para escrever a mensagem em algum arquivo, o > redireciona o lugar em que quero escrever, caso o arquivo não exista ele irá criar, caso eu queira inserir dados em algum arquivo já existente, posso utilizar o >>
 
-`copy logo-alura.png logo-alura2.png` - Para copiar algum arquivo
+- `cd ..` - Para voltar um pasta
 
-`rename logo-alura2.png logo-alura-backup.png` - Para renomear o nome de algum arquivo
+- `copy logo-alura.png logo-alura2.png` - Para copiar algum arquivo
 
-`del logo-alura.png` - Deletar arquivo
+- `rename logo-alura2.png logo-alura-backup.png` - Para renomear o nome de algum arquivo
 
-`cls` - Limpar a tela
+- `del logo-alura.png` - Deletar arquivo
 
-`help dir` - Dá mais informações sobre algum comando, neste caso o dir
+- `cls` - Limpar a tela
 
-`tree` - Mostra as pastas e subpastas organizadas em uma árvore
+- `help dir` - Dá mais informações sobre algum comando, neste caso o dir
 
-`more arquivo.txt` - Irá ler um arquivo também igual ao type, mas irá exibir uma página de cada vez
+- `tree` - Mostra as pastas e subpastas organizadas em uma árvore
+
+- `more arquivo.txt` - Irá ler um arquivo também igual ao type, mas irá exibir uma página de cada vez
 
 ------------------------------------------------------------------------------------
 ## Criando um script:

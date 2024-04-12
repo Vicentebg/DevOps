@@ -10,7 +10,7 @@
 
 ## [Docker](https://github.com/Vicentebg/DevOps/tree/main/Docker)
 
-## [Terraform/Ansible](https://github.com/Vicentebg/DevOps/tree/main/Terraform)
+## [Terraform/Ansible](https://github.com/Vicentebg/DevOps/tree/main/Terraform_Ansible)
 
 ## [AWS](https://github.com/Vicentebg/DevOps/tree/main/AWS)
 

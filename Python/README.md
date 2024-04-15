@@ -23,13 +23,13 @@
 
 # Parte 3 - Manipulando Strings com Python
 
-## [Conhecendo métodos úteis da classe String]()
+## [Conhecendo métodos úteis da classe String](https://github.com/Vicentebg/DevOps/blob/main/Python/Parte%203%20-%20Manipulando%20Strings/metodos_uteis_da_classe_string.py)
 
-## [Interpolação de variáveis]()
+## [Interpolação de variáveis](https://github.com/Vicentebg/DevOps/blob/main/Python/Parte%203%20-%20Manipulando%20Strings/interpolacao_de_variaveis.py)
 
-## [Fatiamento de String]()
+## [Fatiamento de String](https://github.com/Vicentebg/DevOps/blob/main/Python/Parte%203%20-%20Manipulando%20Strings/fatiamento_de_string.py)
 
-## [String múltiplas linhas]()
+## [String múltiplas linhas](https://github.com/Vicentebg/DevOps/blob/main/Python/Parte%203%20-%20Manipulando%20Strings/string_multiplas_linhas.py)
 
 # Parte 4 - Criando um sistema bancario
 

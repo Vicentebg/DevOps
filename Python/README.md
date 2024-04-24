@@ -39,4 +39,8 @@
 
 # Parte 5 - Trabalhando com Listas
 
+## [Listas: Criação e acesso de dados](https://github.com/Vicentebg/DevOps/blob/main/Python/Parte%205%20-%20Trabalhando%20com%20Listas/listas_criacao_e_acesso_aos_dados.py)
+
+## [Métodos da classe list](https://github.com/Vicentebg/DevOps/blob/main/Python/Parte%205%20-%20Trabalhando%20com%20Listas/metodo_da_classe_list.py)
+
 # Parte 6 - Conhecendo Tuplas

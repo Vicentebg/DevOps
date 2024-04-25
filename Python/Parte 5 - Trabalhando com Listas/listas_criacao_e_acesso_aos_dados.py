@@ -32,18 +32,18 @@ print(frutas[-3]) # laranja
 
 # Lista aninhadas - São listas de matriz bidimensionais(tabelas), e iremos acessar usando o índice de linha e coluna.
 
-# matriz = [
-#     [1, "a", 2]
-#     ["b", 3, 4]
-#     [6, 5, "c"]
-# ]
+matriz = [
+    [1, "a", 2],
+    ["b", 3, 4],
+    [6, 5, "c"]
+]
 
 # Se eu quiser recuperar o valor de uma linha vou usar matriz[0] por exemplo mas se eu quiser um elemento especifico vou passar linhaXcoluna
 
-# matriz[0] # [1, "a", 2]
-# matriz[0][0] # 1
-# matriz[0][-1] # 2
-# matriz[-1][-1] # "c"
+print(matriz[0]) # [1, "a", 2]
+print(matriz[0][0]) # 1
+print(matriz[0][-1]) # 2
+print(matriz[-1][-1]) # "c"
 
 # Fatiamento - Precisamos passar um valor inicial e/ou final para acessar o conjunto. Também podemos informar quantas posições vão ser "puladas" no acesso.
 

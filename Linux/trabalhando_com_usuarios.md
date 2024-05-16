@@ -69,8 +69,6 @@ done
   |    |    |    |
 Tipo  Dono Grupo Outros
 
-![alt text](image.png)
-
-![alt text](image-1.png)
-
 ```
+
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/a15c7957-0c9b-4635-a37b-691de4b13a47)

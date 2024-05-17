@@ -8,4 +8,8 @@
 - Os usuários não poderão ter permissão de leitura, escrita e execução em diretórios de departamentos que eles não pertencem;
 - Subir arquivo de script criado para a sua conta no GitHub
 
-![image](https://github.com/Vicentebg/DevOps/assets/19577547/ba861dd1-3282-47ae-9eee-aa22967909f7)
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/72cfb717-2ccb-410b-b807-0d7875a75a93)
+
+
+
+

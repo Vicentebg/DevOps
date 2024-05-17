@@ -48,7 +48,7 @@
 
 - `mkdir diretorio\ 2` - Para criar um diretório com o nome com espaço, ficará diretório 2 o nome dessa pasta. 
 
-- `cp dir1 dir2` - Estrutura é diretório de origem para diretório de destino. 
+- `cp dir1 dir2` - Faz uma cópia do dir1 para o dir2 onde a estrutura é diretório: Da origem para diretório de destino. 
 
 - `cp -r * ../dir2` - Considerando o caso de ter dois diretórios dir1 e dir2 na mesma hierarquia, dentro do dir1 tenho alguns arquivos e quero copiar esses arquivos para o dir2, o comando seria este, representando copiar em recursão todo o conteúdo de dir1 para dir2. 
 
@@ -319,3 +319,27 @@ LABEL=UEFI      /boot/efi       vfat    umask=0077      0 1
 ~                                
 ```
 Iremos adicionar a terceira linha `/dev/sdb /mnt/disco2 ext4 defaults 0 0`, isso será de acordo com sua configuração, caso o diretório seja outro terá que ser passado o local certo.
+
+## Iniciando, visualizando e encerrando processos
+
+- `ps aux` - O comando ps mostra os processos porém só do terminal e não de todos os usuários, com `a` ele irá mostrar os processos de todos os usuários, o `u` fornece o nome do usuário e o horário que foi inicializado, já o `x` mostra os processos que foram iniciados fora do terminal utilizado. 
+
+Iremos ter um retorno parecido com este:
+
+```
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2 167976  9732 ?        Ss   Mar23  16:11 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Mar23   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Mar23   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   Mar23   0:00 [rcu_par_gp]
+root           5  0.0  0.0      0     0 ?        I<   Mar23   0:00 [slub_flushwq]
+root           6  0.0  0.0      0     0 ?        I<   Mar23   0:00 [netns]
+```
+
+- `kill 2` - Iremos encerrar o processo da segunda linha, iremos passar o PID para encerrar o processo.
+
+- `killall chrome` - Também podemos encerrar um processo passando um nome neste caso utilizamos o chrome como exemplo.
+
+- `w` - Visualiza quais usuários estão logados na máquina no momento.
+
+- `who -a` - Mostra o PID do usuário, com isso podemos ver um usuário que não era para estar logado em determinado horário ou um invasor e podemos dar um `kill` no seu PID e com isso desconectaremos ele.

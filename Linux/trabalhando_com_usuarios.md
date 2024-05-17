@@ -58,7 +58,7 @@ done
 
 - `gpasswd -d joao sudo` = Removendo o usuário joao do grupo sudo
 
-### Conhecendo o sistema de permissões
+### Permissões
 
 - `https://chmod-calculator.com/` = Este site é muito bom para saber qual as permissões.
 
@@ -69,6 +69,58 @@ done
   |    |    |    |
 Tipo  Dono Grupo Outros
 
+
+
 ```
 
 ![image](https://github.com/Vicentebg/DevOps/assets/19577547/a15c7957-0c9b-4635-a37b-691de4b13a47)
+
+- `chown joao:GRP_ADM /adm/` = Trocando o dono e o grupo do diretório onde o diretório é o /adm/ e o GRP_ADM o grupo
+
+```
+----------------------
+| Leitura (R) |  4   |
+| Gravação (W)|  2   |
+| Execução (X)|  1   |
+| Nenhuma     |  0   |
+----------------------
+```
+Para dar permissão basta somar os números sendo que o 7 é permissão total
+
+- `chmod 750 /adm/` = Permissão total para o DONO / Permissão de Leitura e Execução para o GRUPO e nada para OUTROS
+
+```
+chmod [tipo][operador][permissão] arquivo
+
+Onde tipo pode ser:
+
+u: dono do arquivo (user who owns it)
+g: grupo do arquivo (group)
+o: outros (others)
+a: todos os acima (all)
+Os operadores podem ser:
+
++: o sinal de mais adicionará as permissões a seguir
+-: o sinal de menos removerá as permissões a seguir
+E a permissão, pode ser a combinação de uma ou mais das letras que já vimos acima.
+
+r: para leitura (read)
+w: para escrita (write)
+x: para execução (execute)
+
+
+Exemplos:
+
+chmod u+rwx arquivo.txt
+Adiciona permissão de leitura, escrita e execução para o dono do arquivo
+chmod g-w arquivo.txt
+Remove permissão de escrita para pessoas inseridas no grupo ao qual o arquivo pertence
+chmod a+r arquivo.txt
+Dá permissão de leitura para todo mundo
+chmod u+x,g-w,o+r arquivo.txt
+Acrescenta permissão de execução para o dono, remove permissão de escrita para o grupo, e adiciona permissão de leitura para outros.
+chmod -R u+rw diretório
+Dá permissão de leitura e escrita para o dono em todos os arquivos e diretórios dentro de uma pasta recursivamente.
+chmod o-rwx *.sql
+Remove todas as permissões de que não é o dono nem faz parte do grupo, em todos os arquivos do diretório atual com extensão .sql.
+```

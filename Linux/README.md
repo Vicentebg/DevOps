@@ -1,76 +1,74 @@
 ### Comandos básicos de Linux 
 
-  
+- `sudo apt update` - Atualizando as referências dos pacotes com as versões dos pacotes do servidor. 
 
-- `sudo apt update` = Atualizando as referências dos pacotes com as versões dos pacotes do servidor. 
+- `sudo apt install openssh-server` - Se tivesse na versão de desktop, para ter o acesso via SSH. 
 
-- `sudo apt install openssh-server` = Se tivesse na versão de desktop, para ter o acesso via SSH. 
+- `pwd` - Mostra em que diretório estou no sistema. 
 
-- `pwd` = Mostra em que diretório estou no sistema. 
+- `ls` - Conteúdo do diretório 
 
-- `ls` = Conteúdo do diretório 
+- `ls -a` - Lista todo o conteúdo do diretório (arquivos ocultos), começam com ponto os - arquivos ocultos, exemplo .profile . 
 
-- `ls -a` = Lista todo o conteúdo do diretório (arquivos ocultos), começam com ponto os - arquivos ocultos, exemplo .profile . 
+- `ls -la` - Lista todo o conteúdo, mas no formato de lista com mais detalhes. 
 
-- `ls -la` = Lista todo o conteúdo, mas no formato de lista com mais detalhes. 
+- `ll` - Mesma coisa do comando de cima, só que é um atalho. 
 
-- `ll` = Mesma coisa do comando de cima, só que é um atalho. 
+- `clear` - Limpa tela. 
 
-- `clear` = Limpa tela. 
+- `Ctrl + L` - Atalho para limpar a tela. 
 
-- `Ctrl + L` = Atalho para limpar a tela. 
+- `ls --help` - Neste comando ele me dará uma ajuda sobre os argumentos que posso passar para o comando ls, mas posso utilizar qualquer comando --help, por exemplo `pwd` --help . 
 
-- `ls --help` = Neste comando ele me dará uma ajuda sobre os argumentos que posso passar para o comando ls, mas posso utilizar qualquer comando --help, por exemplo `pwd` --help . 
+- `man ls` - Comando que exibe tipo de um manual para o comando. 
 
-- `man ls` = Comando que exibe tipo de um manual para o comando. 
+- `cd` - Volta pra minha /home/ . 
 
-- `cd` = Volta pra minha /home/ . 
+- `cd /etc` - Vai para o diretório etc. 
 
-- `cd /etc` = Vai para o diretório etc. 
+- `cd -` - Ele realiza um switch do diretório em que estou e do diretório em que estava. 
 
-- `cd -` = Ele realiza um switch do diretório em que estou e do diretório em que estava. 
+- `cd ~` - Vai para /home/ . 
 
-- `cd ~` = Vai para /home/ . 
+- `mkdir labs` - Cria diretório chamado labs. 
 
-- `mkdir labs` = Cria diretório chamado labs. 
+- `mkdir -p dir1/dir2/dir3` - O argumento -p possibilita criar vários diretórios de uma vez. 
 
-- `mkdir -p dir1/dir2/dir3` = O argumento -p possibilita criar vários diretórios de uma vez. 
+- `touch arq1` - Cria um novo arquivo. 
 
-- `touch arq1` = Cria um novo arquivo. 
+- `touch arq2 arq3` - Cria 2 arquivos. 
 
-- `touch arq2 arq3` = Cria 2 arquivos. 
+- `touch .arq4` - Cria um arquivo oculto (oculto por causa do . no começo). 
 
-- `touch .arq4` = Cria um arquivo oculto (oculto por causa do . no começo). 
+- `rmdir` - Remove diretório. 
 
-- `rmdir` = Remove diretório. 
+- `rm -r dir1` - Deleta diretórios e arquivos usando recursividade, deleta do dir1 para – frente. 
 
-- `rm -r dir1` = Deleta diretórios e arquivos usando recursividade, deleta do dir1 para – frente. 
+- `rm -r` - Para apagar diretórios. 
 
-- `rm -r` = Para apagar diretórios. 
+- `mkdir diretorio\ 2` - Para criar um diretório com o nome com espaço, ficará diretório 2 o nome dessa pasta. 
 
-- `mkdir diretorio\ 2` = Para criar um diretório com o nome com espaço, ficará diretório 2 o nome dessa pasta. 
+- `cp dir1 dir2` - Estrutura é diretório de origem para diretório de destino. 
 
-- `cp dir1 dir2` = Estrutura é diretório de origem para diretório de destino. 
+- `cp -r * ../dir2` - Considerando o caso de ter dois diretórios dir1 e dir2 na mesma hierarquia, dentro do dir1 tenho alguns arquivos e quero copiar esses arquivos para o dir2, o comando seria este, representando copiar em recursão todo o conteúdo de dir1 para dir2. 
 
-- `cp -r * ../dir2` = Considerando o caso de ter dois diretórios dir1 e dir2 na mesma hierarquia, dentro do dir1 tenho alguns arquivos e quero copiar esses arquivos para o dir2, o comando seria este, representando copiar em recursão todo o conteúdo de dir1 para dir2. 
+- `cp -r dir1/* dir2` - Mesmo caso do de cima. 
 
-- `cp -r dir1/* dir2` = Mesmo caso do de cima. 
+- `mv dir1 dir4` - Ele vai renomear o diretório dir1 para dir4. 
 
-- `mv dir1 dir4` = Ele vai renomear o diretório dir1 para dir4. 
+- `mv dir1/* dir4` - Irá mover todos os arquivos dentro de dir1 para o dir4. 
 
-- `mv dir1/* dir4` = Irá mover todos os arquivos dentro de dir1 para o dir4. 
+- `history` - Mostra todos os comandos utilizados até o momento. 
 
-- `history` = Mostra todos os comandos utilizados até o momento. 
+- `ls arq1*` - Me retorne todos os arquivos a partir de arq1 incluindo nada. 
 
-- `ls arq1*` = Me retorne todos os arquivos a partir de arq1 incluindo nada. 
+- `ls arq1?` - O ? irá substituir um caractere, no caso posso utilizar arq??? e caso tenha um diretório arq100 ele irá me retornar ele . 
 
-- `ls arq1?` = O ? irá substituir um caractere, no caso posso utilizar arq??? e caso tenha um diretório arq100 ele irá me retornar ele . 
+- `ls *1* `- Ele irá procurar tudo que tem 1 no nome. 
 
-- `ls *1* `= Ele irá procurar tudo que tem 1 no nome. 
+- `ls ???[1-5]` - Em um cenário que estou considerando que os 3 primeiros caracteres seriam ou arq ou tmp e eu preciso encontrar os arquivos dentro de um intervalo, no caso de 1 a 5. 
 
-- `ls ???[1-5]` = Em um cenário que estou considerando que os 3 primeiros caracteres seriam ou arq ou tmp e eu preciso encontrar os arquivos dentro de um intervalo, no caso de 1 a 5. 
-
-- `ls arq[1,5]`= Para procurar arquivos que começam com arq e tenham 1 e 5. 
+- `ls arq[1,5]`- Para procurar arquivos que começam com arq e tenham 1 e 5. 
 
 ## Filesystem Hierarchy Standard (padrão para sistema de arquivos hierárquico) ou FHS
 ![image](https://user-images.githubusercontent.com/19577547/180101809-2ac41b67-4f77-4bde-a891-dd5001f8ced5.png)
@@ -111,72 +109,73 @@
 
 - `cat american-english | grep -iE "^smartphone$|^computer$"` - Vai buscar no arquivo american-english as palavras smartphone e computer, e nos retornar somente elas por conta do regex de inicio ^ e o de final $, o -i é para ignorar maiuscula ou minuscula e o -E para passar uma expressão regular(regex)
 
+- `ip a` - Para verificar as configurações de IP.
 
 # Trabalhando com usuários
 
 ### Criando e excluindo usuários
 
-- `useradd joao.silva` = Criar um usuário dando um nome de login no sistema (Evitar usar acento e espaço em branco)
+- `useradd joao.silva` - Criar um usuário dando um nome de login no sistema (Evitar usar acento e espaço em branco)
 
-- `useradd joao -m -c "João da Silva" -s /bin/bash -p $(openssl passwd -crypt Senha123) -G GRP_ADM` = Criar um usuário (-m cria a pasta do usuário na home) (-c nome completo do usuário) (-s definir o tipo de bash que ele vai usar ou terminal) -p $(openssl passwd -crypt Senha123) isso irá criar a senha criptografada que é um requisito para criar um novo usuário já com senha (-G permite inserir o novo usuário a um grupo no caso o grupo GRP_ADM)
+- `useradd joao -m -c "João da Silva" -s /bin/bash -p $(openssl passwd -crypt Senha123) -G GRP_ADM` - Criar um usuário (-m cria a pasta do usuário na home) (-c nome completo do usuário) (-s definir o tipo de bash que ele vai usar ou terminal) -p $(openssl passwd -crypt Senha123) isso irá criar a senha criptografada que é um requisito para criar um novo usuário já com senha (-G permite inserir o novo usuário a um grupo no caso o grupo GRP_ADM)
 
-- `userdel -f joao.silva` = Excluir usuário
+- `userdel -f joao.silva` - Excluir usuário
 
-- `userdel -f -r joao.silva` = Excluir usuário e a pasta home e configurações de e-mail
+- `userdel -f -r joao.silva` - Excluir usuário e a pasta home e configurações de e-mail
 
-- `passwd joao` = Definir senha do usuário
+- `passwd joao` - Definir senha do usuário
 
-- `chsh -s /bin/bash joao` = Definir o bash como uso quando for logado no usuário CASO NÃO TENHA SIDO DEFINIDO NA CRIAÇÃO DO USUÁRIO
+- `chsh -s /bin/bash joao` - Definir o bash como uso quando for logado no usuário CASO NÃO TENHA SIDO DEFINIDO NA CRIAÇÃO DO USUÁRIO
 
-- `su joao` = Logar no usuário
+- `su joao` - Logar no usuário
 
 ### Editando informações do usuário
 
-- `usermod joao` = Realizar mudanças no usuário
+- `usermod joao` - Realizar mudanças no usuário
 
-- `passwd joao -e` = Força o usuário a alterar a senha pois o -e faz expirar sua senha caso não passe nenhuma data
+- `passwd joao -e` - Força o usuário a alterar a senha pois o -e faz expirar sua senha caso não passe nenhuma data
 
-- `cat /etc/passwd` = Informações dos usuários criados
+- `cat /etc/passwd` - Informações dos usuários criados
 
 ### Shell Script - Criando usuários em lote
 
-- `nano criar_user.sh` = Para criar o arquivo do script
+- `nano criar_user.sh` - Para criar o arquivo do script
 
 ```
 #!/bin/bash
 
 for i in {1..50}
 do
-    username="guest$i"
+    username-"guest$i"
     useradd $username -c "Usuário convidado $i" -s /bin/bash -m -p $(openssl passwd -crypt Senha123)
     echo "Usuário $username criado com sucesso."
     passwd $username -e
 done
 ```
-- `chmod +x criar_user.sh` = Dar permissões para executar o script
+- `chmod +x criar_user.sh` - Dar permissões para executar o script
 
-- `./criar_user.sh` = Para executar o script você precisa estar na mesma pasta em que ele está ou o comando irá mudar
+- `./criar_user.sh` - Para executar o script você precisa estar na mesma pasta em que ele está ou o comando irá mudar
 
 ### Adicionando usuários a grupos
 
-- `cat /etc/group` = Informações dos grupos
+- `cat /etc/group` - Informações dos grupos
 
-- `usermod -G adm,sudo joao` = Colocar em grupos com privilegios administrativos (-G significa que posso adicionar o usuario em mais de um grupo)
+- `usermod -G adm,sudo joao` - Colocar em grupos com privilegios administrativos (-G significa que posso adicionar o usuario em mais de um grupo)
 **Caso seja este usuário já esteja em outro grupo ele será retirado deles e será colocado somente nesses que foram passados**
 
 ### Criando novos grupos
 
-- `groupadd GRP_ADM` = Criando um grupo chamado GRP_ADM
+- `groupadd GRP_ADM` - Criando um grupo chamado GRP_ADM
 
-- `groupdel GRP_ADM` = Deletando um grupo chamado GRP_ADM
+- `groupdel GRP_ADM` - Deletando um grupo chamado GRP_ADM
 
-- `gpasswd -d joao sudo` = Removendo o usuário joao do grupo sudo
+- `gpasswd -d joao sudo` - Removendo o usuário joao do grupo sudo
 
 ### Permissões
 
-- `https://chmod-calculator.com/` = Este site é muito bom para saber qual as permissões.
+- `https://chmod-calculator.com/` - Este site é muito bom para saber qual as permissões.
 
-- `ls -la` = Irá informar os arquivos ocultos e permissões
+- `ls -la` - Irá informar os arquivos ocultos e permissões
 
 ```
    d   rwx  r-x  r-x
@@ -189,7 +188,7 @@ Tipo  Dono Grupo Outros
 
 ![image](https://github.com/Vicentebg/DevOps/assets/19577547/a15c7957-0c9b-4635-a37b-691de4b13a47)
 
-- `chown joao:GRP_ADM /adm/` = Trocando o dono e o grupo do diretório onde o diretório é o /adm/ e o GRP_ADM o grupo
+- `chown joao:GRP_ADM /adm/` - Trocando o dono e o grupo do diretório onde o diretório é o /adm/ e o GRP_ADM o grupo
 
 ```
 ----------------------
@@ -201,7 +200,7 @@ Tipo  Dono Grupo Outros
 ```
 Para dar permissão basta somar os números sendo que o 7 é permissão total
 
-- `chmod 750 /adm/` = Permissão total para o DONO / Permissão de Leitura e Execução para o GRUPO e nada para OUTROS
+- `chmod 750 /adm/` - Permissão total para o DONO / Permissão de Leitura e Execução para o GRUPO e nada para OUTROS
 
 ```
 chmod [tipo][operador][permissão] arquivo
@@ -238,3 +237,85 @@ Dá permissão de leitura e escrita para o dono em todos os arquivos e diretóri
 chmod o-rwx *.sql
 Remove todas as permissões de que não é o dono nem faz parte do grupo, em todos os arquivos do diretório atual com extensão .sql.
 ```
+
+# Trabalhando com pacotes
+
+## Ubuntu & Debian
+
+- `apt-get --help` - Para ver as funções disponíveis do apt-get, normalmente ele é usado para atualizar os pacotes do sistema com o comando `apt-get update` e `apt-get upgrade`é uma versão mais antiga e menos amigável.
+
+- `apt --help` - Uma versão mais nova e mais amigável.
+
+- `apt update` - Será checado os repositórios e caso possua atualização ele irá informar quantos estão disponiveis e será baixado, mas ainda não instalado.
+
+- `apt upgrade` - Atualiza os pacotes do sistema operacional
+
+*ALERTA* - CASO ESTEJA EM PRODUÇÃO OU FOR ATUALIZAR NORMALMENTE, SEMPRE RODAR O UPDATE ANTES DO UPGRADE E ANALISAR O QUE SERÁ ATUALIZADO.
+
+- `apt list --installed` - Consegue ver os pacotes instalados na máquina.
+
+- `apt list --upgradeable` - Ver quais pacotes estão disponíveis para serem atualizados.
+
+- `apt search samba` - Para buscar se o pacote que você deseja está disponível, no caso estamos buscando do samba.
+
+- `wget https://github.com/Vicentebg/DevOps/archive/refs/heads/main.zip` - Fará o download do repositório informado, pode ser utilizado para outros tipos de download.
+
+- `unzip main.zip` - Irá descompactar o arquivo, caso a ferramenta não esteja instalada rodar o comando `apt install unzip`, caso seja .rar você pode utilizar o unrar.
+
+- `apt install net-tools -y` - Irá instalar o pacote net-tools
+
+- `apt remove net-tools -y` - Para remover alguma pacote caso o usuário deseje, neste exemplo estamos utilizando a ferramente net-tools, o `-y` retira as perguntas que o script de desinstalação vai realizar, é como se ele desse Yes para todas as perguntas.
+
+- `apt edit-sources` - Aparece um arquivo de texto com os repositórios oficiais do sistema operacional, caso precise colocar algum repositório que não esteja disponível será neste arquivo que será colocado.
+
+## Fedora, Red Hat & CentOS
+
+- `dnf --help` - Mais amigável similiar ao apt
+
+- `yum --help` - Normalmente utilizado para criação de scripts e mais antigo, similiar ao apt-get
+
+- `dnf update` - Diferente do Ubuntu ele já realiza a instalação dos pacotes *TOMAR CUIDADO* criar um backup antes
+
+# Gerenciamento de discos
+
+O sistema de arquivo utilizado no Linux normalmente é o Ext3, Ext4 e XFS.
+
+No Linux cada disco recebe um nome iniciado por sd.
+
+Exemplo: sda, sdb, sdc...
+
+Cada partição do disco é numerada
+
+Exemplo: sda1, sda2, sda3, sdb1, sdb2...
+
+- `lsblk` - Visualiza os discos disponíveis.
+
+- `fdisk -l` - Outra forma de visualizar os discos disponíveis.
+
+- `fdisk /dev/sdb` - Adicionando um novo disco na sua partição, ele entrará no menu do fdisk logo após entrar no menu iremos clicar a letra `n` e logo em seguida vamos teclar o `p` depois o `1`, `enter`para ficar definido como default, `enter` novamente e logo após terminar o processo iremos teclar o `w` para salvar as alterações. Agora precisamos formator o disco para se tornar utilizado, devemos formator no formato utilizado pelo sistema operacional.
+O sdb indicado no comando significa que é um segundo disco
+
+- `mkfs.ext4 /dev/sdb` - Para formatar iremos rodar este comando, onde o ext4 é o formato indicado para o Linux e o /dev/sdb indica qual disco será formatado.
+
+*Agora vamos ter que montar o disco, ele já está pronto para uso.*
+
+Normalmente é utilizado para a montagem o diretório mnt então vamos usar o comando `cd mnt` e criar uma pasta `mkdir disco2` logo em seguida vamos digitar o comando `mount /dev/sdb /mnt/disco2/` a partir de agora tudo que for salvo no disco sdb ficará neste repositório.
+
+Para desmontar o disco `unmount /dev/sdb`
+
+Bom agora tudo está funcionando, porém caso a máquina seja reiniciada ou desligada, você terá que refazer o processo novamente para isso iremos abordar a partir de agora uma maneira de montar automaticamente quando a máquina for reiniciada ou desligada.
+
+## Montando discos automaticamente
+
+- `vi /etc/fstab` - Irá para o arquivo de configuração dos discos que já estão montados, iremos editar com as novas configurações.
+
+```
+LABEL=cloudimg-rootfs   /        ext4   discard,errors=remount-ro       0 1
+LABEL=UEFI      /boot/efi       vfat    umask=0077      0 1
+/dev/sdb /mnt/disco2 ext4 defaults 0 0
+# a swapfile is not a swap partition, no line here
+#   use  dphys-swapfile swap[on|off]  for that
+~                                
+~                                
+```
+Iremos adicionar a terceira linha `/dev/sdb /mnt/disco2 ext4 defaults 0 0`, isso será de acordo com sua configuração, caso o diretório seja outro terá que ser passado o local certo.

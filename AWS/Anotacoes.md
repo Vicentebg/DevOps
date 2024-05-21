@@ -29,15 +29,18 @@ O AWS Identity and Access Management - IAM permite o gerenciamento seguro do ace
 
 - **Identity**: Fornece acesso a uma conta na AWS.
 - **IAM Users**: Representa uma pessoa ou serviço que utiliza serviços AWS.
+  
 ![image](https://github.com/Vicentebg/DevOps/assets/19577547/f9c51b55-77a3-4d99-bb92-d89ce9268622)
 
 - **User Groups**: Coleção de usuários IAM.
 
-    ![image](https://github.com/Vicentebg/DevOps/assets/19577547/3c0bd019-7df3-4b05-92ce-85cab791bc76)
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/3c0bd019-7df3-4b05-92ce-85cab791bc76)
 
 - **IAM Roles**: Conjunto de permissões que determinam o nível de acesso de uma identidade aos serviços AWS.
 - **Inline policy**: permissões atreladas diretamente a uma identidade (não são reaproveitáveis)
 - **Managed policy**: Conjunto de permissões disponível para várias identidades.
-- **IAM Policies**: Define permissões de acesso a serviços AWS. 
+- **IAM Policies**: Define permissões de acesso a serviços AWS.
+  
 ![image](https://github.com/Vicentebg/DevOps/assets/19577547/f97ea3e9-b1e4-4381-819a-df7443068d65)
+
 - **IAM Permissions**: Nível mais baixo da hierarquia, determina se uma identidade pode ou não tomar uma ação sobre um recurso na AWS (Allow/Deny).

@@ -18,12 +18,12 @@ O AWS Identity and Access Management - IAM permite o gerenciamento seguro do ace
 
 ### Recursos do IAM
 
-- **Acesso compartilhado a contas da AWS**: Forneces permissões de acesso a outros usuários.
-- **Permissões granulares**: Usuários podem ter níveis de acesso diferentes de acordo com suas funções em uma conta AWS
-- **MFA**: Autenticação de múltiplos fatores
-- **Identidades federadas**: Credenciais podem ser importadas de outros provedores de identidade
-- **Integração com serviços AWS**: Estabelece níveis de permissões de acesso aos serviços AWS 
-- **Gratuito**: O IAM não possui custos ou limites de uso
+- **Acesso compartilhado a contas da AWS**: Fornece permissões de acesso a outros usuários.
+- **Permissões granulares**: Usuários podem ter níveis de acesso diferentes de acordo com suas funções em uma conta AWS.
+- **MFA**: Autenticação de múltiplos fatores.
+- **Identidades federadas**: Credenciais podem ser importadas de outros provedores de identidade.
+- **Integração com serviços AWS**: Estabelece níveis de permissões de acesso aos serviços AWS .
+- **Gratuito**: O IAM não possui custos ou limites de uso.
 
 ### Termos e conceitos do IAM
 
@@ -37,10 +37,51 @@ O AWS Identity and Access Management - IAM permite o gerenciamento seguro do ace
 ![image](https://github.com/Vicentebg/DevOps/assets/19577547/3c0bd019-7df3-4b05-92ce-85cab791bc76)
 
 - **IAM Roles**: Conjunto de permissões que determinam o nível de acesso de uma identidade aos serviços AWS.
-- **Inline policy**: permissões atreladas diretamente a uma identidade (não são reaproveitáveis)
+- **Inline policy**: Permissões atreladas diretamente a uma identidade (não são reaproveitáveis).
 - **Managed policy**: Conjunto de permissões disponível para várias identidades.
 - **IAM Policies**: Define permissões de acesso a serviços AWS.
   
 ![image](https://github.com/Vicentebg/DevOps/assets/19577547/f97ea3e9-b1e4-4381-819a-df7443068d65)
 
 - **IAM Permissions**: Nível mais baixo da hierarquia, determina se uma identidade pode ou não tomar uma ação sobre um recurso na AWS (Allow/Deny).
+
+### Boas práticas
+
+A AWS tem uma lista de melhores práticas para ajudar desenvolvedores e profissionais de TI a gerenciar o acesso aos recursos da AWS.
+- **Conta raiz**: Não utilizá-la em tarefas diárias de desenvolvimento.
+- **Usuários**: Crie usuários individuais..
+- **Privilégios mínimos**: Prover apenas o nível de acesso necessário.
+- **Permissões**: Utilizar grupos de usuários com permissões.
+- **Auditoria**: Ativar o AWS CloudTrail.
+- **Senhas**: Senhas fortes.
+- **MFA**: Ativar para usuários privilegiados.
+
+## Criando usuários no AWS IAM
+
+- Acessar o IAM no Console através do link: https://console.aws.amazon.com/iamv2/home?#/users
+- Criar um novo usuário.
+- Gerar credenciais de acesso.
+- Atribuir permissões ao novo usuário criado.
+- Acessar o console da AWS com o novo usuário criado.
+- Testar permissões de acesso atribuídas.
+
+## Criando grupos de usuários no AWS IAM
+
+- Para criar grupos de usuários, acesse o seguinte link: https://console.aws.amazon.com/iamv2/home#/groups
+- Criar grupos de usuários.
+- Atribuir permissões de acesso aos grupos.
+- Adicionar usuários aos grupos.
+- Testar permissões dos usuários.
+
+## Criando Roles e Policies AWS IAM
+
+Uma política (policy) é um objeto na AWS que, quando associado a uma identidade ou a um recurso, define suas permissões. Uma função (role) é uma identidades da AWS com políticas de permissão que determinam quais ações podem ou não serem executadas na AWS.
+
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/9ac9e61d-5ebc-4fb8-8399-6a3eb42d918e)
+
+- Para criar roles, acesse o seguinte link: https://console.aws.amazon.com/iamv2/home?#/roles
+- Para criar policies, acesse o seguinte link: https://console.aws.amazon.com/iamv2/home?#/policies
+- Criar políticas com permissões.
+- Criar roles com policies atreladas.
+- Atribuir as novas roles a usuários.
+

@@ -1,21 +1,43 @@
-# Anotações AWS
+# AWS
 
-1 - Procurar por IAM e configurar MFA(Multifator de autenticação)
+## Infraestrutura Global AWS
 
-2 - aws sts get-caller-identity (Para ver os usuários que estão validados busca so os default) ou aws sts get-caller-identity —profile vicente (para procurar um perfil especifico)
+- **Regiões AZ**: Regiões geográficas.
+- **Availability Zones**: Datacenters.
+- **Local Zones**: Datacenters de menores dimensões, conectado a uma AZ.
+- **Wave Length**: Servidor específico de aplicações com baixa latência conectado a uma AZ.
+- **Outspots**: Datacenters terceiros (colocations) com servidores AWS.
 
-3 - Criar um grupo com as politicas desejadas e posteriormente adicionar usuário ao grupo e criar a chave de acesso
+## AWS IAM
 
-4 - Configurar AWS CLI com o comando aws configure, depois inserir a Chave de Acesso, depois a Chave de acesso secreta, depois a região (prestar atenção pois o IAM é global, observar a região clicando para ir no menu inicial da AWS), depois preencher o output com json ou text
+### O que é o AWS IAM?
 
-5 - Para saber se foi configurado corretamente: aws configure list
+O AWS Identity and Access Management - IAM permite o gerenciamento seguro do acesso aos serviços e recursos da AWS por meio da criação de usuários, grupos de usuários e permissões.
 
-6 - cat ~/.aws/config (consegue visualizar a região) 
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/d965c4c8-8cdb-46b6-bff5-5a491214bef3)
 
-7 - cat ~/.aws/credentials (consegue visualizar as chaves de acesso)
+### Recursos do IAM
 
-8  - Para configurar um profile: aws configure --profile vicente
+- **Acesso compartilhado a contas da AWS**: Forneces permissões de acesso a outros usuários.
+- **Permissões granulares**: Usuários podem ter níveis de acesso diferentes de acordo com suas funções em uma conta AWS
+- **MFA**: Autenticação de múltiplos fatores
+- **Identidades federadas**: Credenciais podem ser importadas de outros provedores de identidade
+- **Integração com serviços AWS**: Estabelece níveis de permissões de acesso aos serviços AWS 
+- **Gratuito**: O IAM não possui custos ou limites de uso
 
-9 - (Stop Protection/Shutdown Behavior/Termination Protection)
+### Termos e conceitos do IAM
 
-Clicar com o botão direito em cima da instancia → Configurações da instancia → Alterar proteção contra interrupção → Habilitar Checkbox e estará habilitado a proteção (Stop Protection)
+- **Identity**: Fornece acesso a uma conta na AWS.
+- **IAM Users**: Representa uma pessoa ou serviço que utiliza serviços AWS.
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/f9c51b55-77a3-4d99-bb92-d89ce9268622)
+
+- **User Groups**: Coleção de usuários IAM.
+
+    ![image](https://github.com/Vicentebg/DevOps/assets/19577547/3c0bd019-7df3-4b05-92ce-85cab791bc76)
+
+- **IAM Roles**: Conjunto de permissões que determinam o nível de acesso de uma identidade aos serviços AWS.
+- **Inline policy**: permissões atreladas diretamente a uma identidade (não são reaproveitáveis)
+- **Managed policy**: Conjunto de permissões disponível para várias identidades.
+- **IAM Policies**: Define permissões de acesso a serviços AWS. 
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/f97ea3e9-b1e4-4381-819a-df7443068d65)
+- **IAM Permissions**: Nível mais baixo da hierarquia, determina se uma identidade pode ou não tomar uma ação sobre um recurso na AWS (Allow/Deny).

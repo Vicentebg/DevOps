@@ -52,6 +52,8 @@
 
 - `cp -r * ../dir2` - Considerando o caso de ter dois diretórios dir1 e dir2 na mesma hierarquia, dentro do dir1 tenho alguns arquivos e quero copiar esses arquivos para o dir2, o comando seria este, representando copiar em recursão todo o conteúdo de dir1 para dir2. 
 
+- `cp -R * /var/www/html` - Este comando diz, copie tudo que está na pasta e jogue para var/www/html
+
 - `cp -r dir1/* dir2` - Mesmo caso do de cima. 
 
 - `mv dir1 dir4` - Ele vai renomear o diretório dir1 para dir4. 
@@ -343,3 +345,60 @@ root           6  0.0  0.0      0     0 ?        I<   Mar23   0:00 [netns]
 - `w` - Visualiza quais usuários estão logados na máquina no momento.
 
 - `who -a` - Mostra o PID do usuário, com isso podemos ver um usuário que não era para estar logado em determinado horário ou um invasor e podemos dar um `kill` no seu PID e com isso desconectaremos ele.
+
+## Servidor de Arquivos
+
+- `apt install samba -y` - Instalar o SAMBA
+
+Criaremos no disco 2 para não causar lentidão no sistema operacional e no servidor de arquivos,o diretório terá o nome de publica.
+
+- `vi /etc/samba/smb.conf` - Arquivo de configuração do samba, no final do arquivo vamos colocar o nome da pasta que será compartilhada vamos adicionar da seguinte maneira
+
+```
+[publica]
+
+path = /disk2/publica
+writable = yes
+guest ok = yes
+guest only = yes
+```
+
+- `systemctl restart smbd` - Após adicionar as configurações acima e salvar o arquivo devemos realizar este comando para restartar o samba para ele identificar nossas alterações
+
+- `systemctl restart smbd` - Para verificar o status do serviço
+
+- `systemctl enable smbd` - Caso reinicie o servidor o serviço não irá startar automáticamente, para isso usamos este comando que sempre que reiniciar ele irá startar automáticamente.
+
+Agora vamos tentar acessar a pasta compartilhada através do Windows, vamos colocar na barra do windows da seguinte forma `\\ip_do_servidor\publica` e irá pedir algumas credenciais, esse usuário precisa estar cadastrado no servidor linux, você pode utilizar as credenciais de usuário e senha nesta etapa e conseguirá acessar o servidor.
+
+## Servidor Web
+
+- `apt install apache2 -y` - Instalar o apache.
+
+- `systemctl status apache2` - Verificar se ele está running.
+
+Logo após colocar o IP do servidor no navegador para ver se o servidor web está rodando, lá ele irá te informar o caminho onde está o html `var/www/html` podemos alterar esse html e ter um site na nossa rede local.
+
+## Servidor de Banco de Dados
+
+- `apt search mysql` - Verificar qual versão está disponível.
+
+- `apt install mysql-server-8.0 -y` - Instalando o MySQL.
+
+- `mysql -u root -p` - Logar no banco de dados como usuário root.
+
+- `create database meubanco;` - Cria um banco de dados com o nome de meubanco
+
+- `show databases;` - Apresenta todos os bancos de dados que possuí.
+
+- `use meubanco;` - Para utilizar o banco que foi criado
+
+- `create table Pessoas (PessoaID int, Nome varchar (50), Sobrenome varchar(50), Endereco varchar(100), Cidade varchar(50));`  - Criando uma tabela no banco de dados meubanco com a coluna PessoaID, Nome, Sobrenome, Endereco e Cidade.
+
+- `show tables;` - Para verificar se a tabela foi criada.
+
+- `insert into Pessoas (PessoaID, Nome, Sobrenome, Endereco, Cidade) VALUES (1, 'Carlos', 'da Silva', 'Av. do carmo, 500', 'Jaboticabal-SP');` - Populando a nossa tabela com dados.
+
+- `select * FROM Pessoas;` - Para ver o que tem dentro de Pessoas.
+
+- `exit` - Para sair da interface do MySQL.

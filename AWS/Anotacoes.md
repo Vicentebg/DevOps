@@ -85,3 +85,58 @@ Uma política (policy) é um objeto na AWS que, quando associado a uma identidad
 - Criar roles com policies atreladas.
 - Atribuir as novas roles a usuários.
 
+# O que é Cloud Computing?
+**Antes de um mundo com cloud** 
+- Modelo cliente servidor
+- Ambientes on-premises
+- Virtualização
+
+**Principal Benefício de Cloud**
+- Pagamento conforme uso (Pay as you go)
+
+## **Cloud Computing é**
+A computação em nuvem é a entrega de recursos de TI sob demanda por meio da internet com definição de preço de **pagamento conforme o uso.**
+
+## Benefícios de Cloud Computing
+- Troque despesas iniciais por despesas variáveis.
+- Pare de tentar adivinhar a capacidade.
+- Beneficie-se de enormes economias de escala.
+- Aumente a velocidade e agilidade.
+- Tenha alcance global em minutos.
+
+## Modelos de Serviço
+### O que são modelos de serviço?
+- Chamado de modelos de computação em nuvem
+- Escolha com base no usuário do serviço e seu objetivo/responsabilidade
+
+#### IaaS
+Infraestrutura como serviço. (Amazon EC2)
+- Componentes básicos de TI.
+- Disco, memória, CPU.
+- Usuário: Sysadmin.
+- Usuário gerencia .infraestrutura.
+
+#### PaaS
+Plataforma como serviço (Elastic Beanstalk).
+- Plataforma para implantar (deploy).
+- Não se preocupe com infraestrutura.
+- Usuário: Desenvolvedores.
+
+#### SaaS
+Software como serviço (Gmail)
+- Produto completo, executado e gerenciado pelo provedor.
+- Não se preocupe com a infraestrutura.
+- Pense apenas em utilizar.
+
+## Comparações
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/b43d0ddf-6185-49a1-bcac-5b6b0e10959a)
+
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/d033d3f2-8779-4a3a-b8b0-6c7b0ce1dd53)
+
+## Modelos de implantação
+### O que são modelos de implantação?
+- Modelos de implantação se relaciona com como os recursos de computação estão estruturados e distribuídos.
+- Em outras palavras, onde o serviço está implantado.
+
+#### On-premise, Híbrido e Cloud
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/98957c57-d55f-4d51-9cef-f73c87ffed21)

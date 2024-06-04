@@ -140,3 +140,82 @@ Software como serviço (Gmail)
 
 #### On-premise, Híbrido e Cloud
 ![image](https://github.com/Vicentebg/DevOps/assets/19577547/98957c57-d55f-4d51-9cef-f73c87ffed21)
+
+# Infraestrutura Global AWS
+**Infraestrutura Global AWS é**
+- Infraestrutura de datacenters em todo o mundo que fornecem os diversos serviços que você pode utilizar na AWS
+- Composto por Regiões e Zonas de disponibilidade
+- Vantagens: Alta disponibilidade, tolerância a falhas
+
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/32408575-d135-4a2d-ac35-7ade714d33c3)
+
+## Regiões e Zonas de Disponibilidade
+
+### Regiões
+- Locais onde são hospedados os datacenters da AWS.
+- Cada **Região** possuem locais isolados chamados de Zonas de Disponibilidade.
+- Todas as regiões são conectadas com rede de alta velocidade.
+- Isolamento de dados.
+- Regulação de dados local.
+
+### Zonas de Disponibilidade
+- Também chamadas de AZs (Availability Zones)
+- Agrupamento de datacenters isolados dentro de uma **Região**.
+- Rede, energia e conectividade redundantes.
+- Próximas o suficiente para manter baixa latência, longe o suficiente para evitar que um desastre afete mais de uma AZ.
+- Recomendação: Execute pelo menos em duas AZs.
+
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/d2036209-9732-40c0-86a6-5d84539370ce)
+
+## Pontos de presença
+- Também chamado de **Edge Locations**, **Locais de Borda** ou **Redes de Borda**.
+- Funcionam como pontos específicos pelo globo para distribuir conteúdo de forma rápida.
+- Exemplos de serviços que se encontram nos locais de borda: Route 53(DNS), Cloud Front(CDN).
+
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/4e3f51d6-9e97-4a94-92f9-34f51649bc10)
+
+### Amazon CloudFront
+- Serviço de entrega de conteúdo: CDN
+- Melhora a performance do seu serviço (baixa latência, alta taxa de transferência)
+- Provê conteúdo o mais próximo possível do seu usuário.
+
+### Amazon Route 53
+- Serviço de DNS.
+- Ajuda os clientes a redirecionar corretamente as requisições.
+
+## Provisionamento de recursos na AWS
+### Como é possível interagir com serviços AWS?
+- Console de gerenciamento
+- AWS CLI
+- SDKs
+
+#### Console de gerenciamento
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/b2497994-aaae-4731-9809-471ca4a601ac)
+
+- https://aws.amazon.com/pt/console/
+
+#### AWS CLI
+
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/1529fc50-3372-4de0-a482-f2f3fe10e5a2)
+
+- Instalado na sua máquina.
+- Opera com APIs da AWS através de linha de comando.
+
+#### AWS SDKs
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/a63d1a3a-6981-4e50-8605-accfe0dc7ed5)
+- Utiliza-se para acessar algum serviço dentro da AWS atráves de alguma aplicação.
+- Acesso as APIs AWS atráves de SDK
+- SDK possui versões em diversas linguagens como: Java, C#, Go, Python, Javascript.
+
+### Provisionando infraestrutura
+#### Elastic Beanstalk
+
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/ec3c259b-757d-4d14-b2dd-958bc57e2430)
+
+- Provisiona a infraestrutura para sua aplicação.
+
+#### CloudFormation
+
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/98f9b103-445b-4fb2-b8dc-14b5872fb496)
+
+- Define a infraestrutura como código IaC.

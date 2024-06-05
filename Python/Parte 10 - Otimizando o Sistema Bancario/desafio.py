@@ -1,12 +1,13 @@
 def menu():
+
     menu = """
-[u] Cadastrar Usuário
-[c] Cadastrar Conta
 [d] Depositar
 [s] Sacar
 [e] Extrato
+[nc] Nova conta
+[lc] Listar contas
+[nu] Novo usuário
 [q] Sair
-
 => """
 
     lista_clientes = []
@@ -24,10 +25,12 @@ def menu():
             saque(saldo, valor, extrato, limite, numero_saques, LIMITE_SAQUES)
         elif opcao == "e":
             deposito(saldo, valor, extrato)
-        elif opcao == "u":
+        elif opcao == "nu":
             lista_clientes = cadastrar_usuario(lista_clientes)
-        elif opcao == "c":
+        elif opcao == "nc":
             lista_de_contas = cadastrar_conta(lista_de_contas, lista_clientes)
+        elif opcao == "lc":
+            print(lista_de_contas)
         elif opcao == "q":
             break
         
@@ -101,6 +104,10 @@ def saque(*,saldo, valor, extrato, limite, numero_saques, LIMITE_SAQUES):
         saldo -= valor
         extrato += f"Saque: R$ {valor:.2f}\n"
         numero_saques += 1
+        print("\nSaque realizado com sucesso!")
+    
+    else:
+        print("\nOperação falhou! O valor informado é inválido.")
 
     return saldo, extrato
 
@@ -116,11 +123,19 @@ def deposito(saldo, valor, extrato, /):
 
     return saldo, extrato
 
-def extrato(saldo, *, extrato):
+def extrato(saldo, /, *, extrato):
     print("\n==============EXTRATO==============")
     print("Não foram realizadas movimentações." if not extrato else extrato)
     print(f"\nSaldo: R$ {saldo:.2f}")
     print("\n===================================")
     
-
+def listar_contas(contas):
+    for conta in contas:
+        linha = f"""\
+            Agência:\t001
+            C/C:\t{conta[1]}
+            CPF:\t{conta[0]}
+        """
+        print("=" * 100)
+        print(linha)
 menu()

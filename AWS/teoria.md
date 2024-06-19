@@ -223,7 +223,7 @@ Software como serviço (Gmail)
 
 ## Computação em AWS
 
-### Elastic Compute Cloud - EC2
+### [Elastic Compute Cloud - EC2](https://aws.amazon.com/pt/ec2)
 #### O que é?
 - Servidor virtual na nuvem AWS que possui configurações de memória, CPU, disco, rede e sistema operacional
 
@@ -237,7 +237,7 @@ Software como serviço (Gmail)
 
 ![image](https://github.com/Vicentebg/DevOps/assets/19577547/25957192-1e5d-48a2-a702-e364c11245a0)
 
-#### Tipos de instância
+#### [Tipos de instância](https://aws.amazon.com/pt/ec2/instance-types/)
 - **Uso geral**
     - Equilíbrio de recursos de computação, memória e rede.
     - Indicado para servidores de aplicativo, jogos, backend, banco de dados pequenos.
@@ -255,7 +255,10 @@ Software como serviço (Gmail)
     - Ideal para cargas de trabalho que exigem acesso de leitura e gravação com grande volume de dados.
     - Exemplo: Sistemas de arquivos distribuídos, Data Warehouse, sistema de processamento de transações online.
 
-### Amazon EC2 AutoScaling
+#### [User Guide](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/concepts.html)
+
+### [Amazon EC2 AutoScaling](https://aws.amazon.com/pt/ec2/autoscaling)
+#### [O que é Escalabilidade?](https://pt.wikipedia.org/wiki/Escalabilidade)
 #### O que é?
 - Uma instância EC2 que ajusta o uso conforme o uso dos dias, por exemplo de domingo temos mais usuários ele irá prover mais recurso para o domingo.
 #### Vantagens
@@ -267,14 +270,58 @@ Software como serviço (Gmail)
 ![image](https://github.com/Vicentebg/DevOps/assets/19577547/dbc7841b-4e23-4c84-a2d7-a3b907130ac7)
 
 #### Abordagem
-- Scaling Preditivo (conhecer bem o uso do sistema).
-- Scaling Dinâmico 
+- [Scaling Preditivo (conhecer bem o uso do sistema).](https://docs.aws.amazon.com/pt_br/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html)
+- [Scaling Dinâmico](https://docs.aws.amazon.com/pt_br/autoscaling/ec2/userguide/as-scale-based-on-demand.html)
 - É possível combinar os dois.
 
-### Elastic Load Balacing - ELB
+### [Elastic Load Balacing - ELB](https://aws.amazon.com/pt/elasticloadbalancing/)
 - Balanceamento de carga de aplicação, gateway e rede.
 - Escopo regional.
 - Escala de forma automática, sem custos.
 - Junto ao EC2 AutoScaling permite criar aplicações altamente disponíveis.
 
-### Serviços de mensageria
+### Serviços de mensageria (SQS e SNS)
+
+#### [Amazon Simple Queue Service - SQS](https://aws.amazon.com/pt/sqs)
+- Sistema de fila de mensagens.
+- Um sistema envia uma mensagem para fila, o outro sistema lê, processa e exclui da fila.
+
+#### [Amazon Simple Notification Service - SNS](https://aws.amazon.com/pt/sns/)
+- Sistema pub/sub(publicador e assinante).
+- Utiliza tópicos como estrutura.
+- Sistema publica mensagens no tópico e assinantes escutam.
+- Um exemplo é quando uma compra é autorizada, tem alguns sistemas que interessam para eles essa notificação de compra autorizada, então por exemplo um sistema de envio de e-mail, sms, estoque, todos eles ficam escutando e quando chega essa notificação eles vão enviar e-mails para o cliente, sms, dar baixa no estoque.
+
+[Mais serviços de mensageria AWS](https://aws.amazon.com/pt/messaging/)
+
+### [Computação sem servidor(Servless)](https://aws.amazon.com/pt/lambda/getting-started)
+
+- O termo "sem servidor" ou em inglês "servless" significa que o código é executado em servidores sem que você precise provisionar ou gerenciar esses servidores.
+- Capacidade automaticamente ajustada pelo serviço, sem necessidade de nenhuma configuração.
+
+#### [AWS Lambda](https://docs.aws.amazon.com/pt_br/lambda/latest/dg/welcome.html)
+- Execução de código sem provisionar servidores.
+- Código organizado em funções.
+- Você pode escolher a linguagem de programação de sua preferência.
+- Executa a partir de eventos ou chamadas diretas a API do Lambda.
+
+##### Como ele funciona?
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/b8294d39-770f-4ce8-b8ba-251a87b1efd9)
+
+### [Containers em AWS](https://aws.amazon.com/pt/containers)
+#### O que são Containers?
+- Forma padrão de empacotar seu aplicativo em um único objetivo.
+- Executados como processos isolados.
+- Docker.
+
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/bd5a46df-3dc0-4475-8a4d-2588ba818935)
+
+#### Serviços AWS 
+- [ECR - Elastic Container Registry](https://aws.amazon.com/pt/ecr)
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/45fc1ae1-4bcb-46f5-81e2-b531e071772e)
+- [ECS - Elastic Container Service](https://aws.amazon.com/pt/ecs)
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/3187e831-72d9-47d1-a9e7-f7ed1d451060)
+- [EKS - Elastic Kubernetes Service](https://aws.amazon.com/pt/eks)
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/2f38b4ad-afe1-47e2-97ff-1b8a9d86074e)
+- [AWS Fargate](https://aws.amazon.com/pt/fargate/)
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/f2a66288-ce7a-4991-b0b5-9e398c334b3e)

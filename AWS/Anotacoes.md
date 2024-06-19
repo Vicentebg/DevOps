@@ -85,7 +85,7 @@ Uma política (policy) é um objeto na AWS que, quando associado a uma identidad
 - Criar roles com policies atreladas.
 - Atribuir as novas roles a usuários.
 
-# O que é Cloud Computing?
+## O que é Cloud Computing?
 **Antes de um mundo com cloud** 
 - Modelo cliente servidor
 - Ambientes on-premises
@@ -219,3 +219,62 @@ Software como serviço (Gmail)
 ![image](https://github.com/Vicentebg/DevOps/assets/19577547/98f9b103-445b-4fb2-b8dc-14b5872fb496)
 
 - Define a infraestrutura como código IaC.
+
+
+## Computação em AWS
+
+### Elastic Compute Cloud - EC2
+#### O que é?
+- Servidor virtual na nuvem AWS que possui configurações de memória, CPU, disco, rede e sistema operacional
+
+#### Vantagens
+- Capacidade computacional segura e redimensionável.
+- Computação: CPU, memória, rede, armazenamento, sistema operacional.
+- Definição de preço conforme uso e modalidades específicas a necessidade.
+- Instâncias com tipos otimizados para sua atividade.
+
+#### Ciclo de vida
+
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/25957192-1e5d-48a2-a702-e364c11245a0)
+
+#### Tipos de instância
+- **Uso geral**
+    - Equilíbrio de recursos de computação, memória e rede.
+    - Indicado para servidores de aplicativo, jogos, backend, banco de dados pequenos.
+- **Otimizadas para computação**
+    - Ideal para cargas de trabalho que exigem processadores de alto desempenho.
+    - Pode ser usado para os mesmos casos de uso da categoria de uso geral mas quando se deseja um melhor desempenho.
+    - Ideal também para processamento em lote.
+- **Otimizadas para memória**
+    - Projeto para alto desempenho no processamento de grandes quantidades de informações na memória.
+    - Exemplo: Banco de dados de alto desempenho, processamento em tempo real de dados.
+- **Computação acelerada**
+    - Usa aceleração de hardware ou coprocessadores para executar algumas funções de forma mais eficiente do que em um software executado direto na CPU.
+    - Exemplo: Cálculo de ponto flutuante, processamento de gráficos e correspondência de padrões de dados.
+- **Otimizadas para armazenamento**
+    - Ideal para cargas de trabalho que exigem acesso de leitura e gravação com grande volume de dados.
+    - Exemplo: Sistemas de arquivos distribuídos, Data Warehouse, sistema de processamento de transações online.
+
+### Amazon EC2 AutoScaling
+#### O que é?
+- Uma instância EC2 que ajusta o uso conforme o uso dos dias, por exemplo de domingo temos mais usuários ele irá prover mais recurso para o domingo.
+#### Vantagens
+- Provê escalabilidade horizontal(adicionar uma máquina para dividir as requisições) para seus serviços.
+- Melhora a tolerância a falhas com identificação de instâncias indisponíveis e implantação multi-AZ
+- Melhor gerenciamento de custos
+
+#### Como é a configuração?
+![image](https://github.com/Vicentebg/DevOps/assets/19577547/dbc7841b-4e23-4c84-a2d7-a3b907130ac7)
+
+#### Abordagem
+- Scaling Preditivo (conhecer bem o uso do sistema).
+- Scaling Dinâmico 
+- É possível combinar os dois.
+
+### Elastic Load Balacing - ELB
+- Balanceamento de carga de aplicação, gateway e rede.
+- Escopo regional.
+- Escala de forma automática, sem custos.
+- Junto ao EC2 AutoScaling permite criar aplicações altamente disponíveis.
+
+### Serviços de mensageria

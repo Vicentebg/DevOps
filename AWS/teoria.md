@@ -369,10 +369,10 @@ Software como serviço (Gmail)
 - Por padrão, permite todo tráfego de entrada e saída.
 
 ##### Segurança para recursos
-![image](https://github.com/user-attachments/assets/2ee3a3d2-13b4-4bd7-8742-5edc7e83798e)
+![image](https://github.com/user-attachments/assets/c8b8552a-e593-4f77-8ff7-5c2b78e00967)
 
 ##### Grupos de segurança
-![image](https://github.com/user-attachments/assets/6290e364-80fc-429d-ae46-3d678811a257)
+![image](https://github.com/user-attachments/assets/2378d9f0-ce31-4146-bef5-2820f3eb1acd)
 - Controle de tráfego de entrada e saída de instância EC2.
 - Comportamento Stateful (Uma vez que um pacote chega até a entrada e ele é permitido entrar na instancia EC2,as regras definidas para entrada elas também servem para saída)
 - Por padrão, nega todo o tráfego de entrada e permite todo tráfego de saída.

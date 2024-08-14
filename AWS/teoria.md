@@ -325,3 +325,61 @@ Software como serviço (Gmail)
 ![image](https://github.com/Vicentebg/DevOps/assets/19577547/2f38b4ad-afe1-47e2-97ff-1b8a9d86074e)
 - [AWS Fargate](https://aws.amazon.com/pt/fargate/)
 ![image](https://github.com/Vicentebg/DevOps/assets/19577547/f2a66288-ce7a-4991-b0b5-9e398c334b3e)
+
+# Redes AWS
+#### [Amazon VPC](https://aws.amazon.com/pt/vpc/)
+- VPC: Virtual Private Cloud
+- Permite construir e configurar redes virtuais na AWS
+- Sub-redes: privadas e públicas (Privada: Um banco de dados que conecta em duas instancias EC2 não necessita de acesso a internet.)
+- "Tudo começa dentro de um VPC"
+
+##### Caso de uso
+![image](https://github.com/user-attachments/assets/3f8bc38b-2174-43e8-bef5-ac3bd8dba8ce)
+
+##### Materias de apoio
+- https://www.youtube.com/watch?v=3UCwOfHKZ38&ab_channel=DouglasMugnos
+- https://docs.aws.amazon.com/pt_br/vpc/latest/userguide/what-is-amazon-vpc.html
+
+#### Conectividade com AWS
+
+##### Conecte sua VPC e a Internet
+![image](https://github.com/user-attachments/assets/a479d78d-6c74-48bf-89ec-9525e1465d2c)
+- O conector roxo significa que está conectando a internet na sub-rede pública(IGW ou Gateway da Internet)
+
+##### Conecte sua VPC a sub-redes privadas
+![image](https://github.com/user-attachments/assets/656acace-43da-4286-8777-8741ac6f4c5d)
+
+##### AWS Direct Connect
+- Conexão dedicada do meu escritório até a nuvem.
+![image](https://github.com/user-attachments/assets/2a416a79-e664-48f1-8f64-d69395876391)
+
+##### Materias de apoio
+- https://docs.aws.amazon.com/pt_br/vpc/latest/userguide/VPC_Internet_Gateway.html
+- https://www.youtube.com/watch?v=-e2yw1STfNo&ab_channel=GuilhermeTeles
+- https://docs.aws.amazon.com/pt_br/vpc/latest/userguide/vpn-connections.html
+
+#### Sub-redes e listas de controle de acesso
+- Como dados trafegam em uma VPC?
+![image](https://github.com/user-attachments/assets/89e7e05a-2e0c-4845-94c9-12802c54d95c)
+
+##### Network ACLs
+![image](https://github.com/user-attachments/assets/76ae220a-e895-49a0-924f-b435d6cabf23)
+- Prove controle de tráfego de entra e saída de sub-redes.
+- Comportamento Stateless (Não guarda estado, tem regras para entrada e saída de dados, por exemplo um banco de dados pedindo para se conectar, ele vai verificar se está na regra dele permitir esta conexão, uma consulta ao banco de dados, ele vai verificar se tem uma regra de saída de dados para te fornecer os resultados da consulta).
+- Por padrão, permite todo tráfego de entrada e saída.
+
+##### Segurança para recursos
+![image](https://github.com/user-attachments/assets/2ee3a3d2-13b4-4bd7-8742-5edc7e83798e)
+
+##### Grupos de segurança
+![image](https://github.com/user-attachments/assets/6290e364-80fc-429d-ae46-3d678811a257)
+- Controle de tráfego de entrada e saída de instância EC2.
+- Comportamento Stateful (Uma vez que um pacote chega até a entrada e ele é permitido entrar na instancia EC2,as regras definidas para entrada elas também servem para saída)
+- Por padrão, nega todo o tráfego de entrada e permite todo tráfego de saída.
+
+##### Materias de apoio
+- https://docs.aws.amazon.com/pt_br/vpc/latest/userguide/vpc-network-acls.html
+- https://docs.aws.amazon.com/pt_br/vpc/latest/userguide/vpc-security-groups.html
+
+#### Revisão 
+![image](https://github.com/user-attachments/assets/fa88adfe-8f71-4c3b-845e-fb598caeaad8)

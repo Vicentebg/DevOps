@@ -383,3 +383,158 @@ Software como serviço (Gmail)
 
 #### Revisão 
 ![image](https://github.com/user-attachments/assets/fa88adfe-8f71-4c3b-845e-fb598caeaad8)
+
+# Armazenamento e Banco de Dados
+#### Armazenamento de dados em nuvem
+- **Tipos de armazenamento**
+    - *Armazenamento de Objetos* (Object Storage)
+        - Object Storage
+        - Dados como objetos (arquivos e metadados)
+        - Dados não estruturados
+        - Casos de uso: Data lakes, Mídias, Backup e recuperação
+    - *Armazenamento de Arquivos* (File Storage)
+        - File Storage
+        - Sistemas de arquivos compartilhados
+        - Permite acesso por meio de servidores, aplicações e usuários
+        - Analogia com pastas compartilhadas em uma rede
+        - Casos de uso: Ferramentas de desenvolvimento, diretórios pessoais
+    - *Armazenamento de Blocos* (Block Storage)
+        - Block Storage
+        - Armazenamento de blocos: HDD, SSD
+        - Dispositivo com diferentes configurações de Leitura e Escrita
+        - Casos de uso: Máquinas virtuais, contêiners, banco de dados
+##### Materiais de apoio
+- https://aws.amazon.com/pt/what-is/cloud-storage/
+- https://aws.amazon.com/pt/what-is/cloud-file-storage/
+- https://aws.amazon.com/pt/what-is/object-storage/
+- https://aws.amazon.com/pt/what-is/block-storage/
+
+#### Amazon Elastic Block Store - EBS
+- **Usando EC2**
+![image](https://github.com/user-attachments/assets/a6388987-910c-4f09-b95b-cddd05f58fd4)
+
+- **Volume Instance Store (são os discos amarelos da imagem acima)**
+    - Armazenamento de blocos
+    - Discos anexados fisicamente ao computador host
+    - Ideal para dados de armazenamento temporário como buffers, caches, dados de rascunho
+- **Dados serão perdidos se**
+    - Falha de disco de uma unidade
+    - Instância parada
+    - Instância hiberna
+    - Instância encerrada
+- **Amazon Elastic Block Store - EBS**
+![image](https://github.com/user-attachments/assets/e3a227e0-380f-4a5f-88ea-b090f63d37ad)
+- **EBS - Elastic Block Store**
+    - Armazenamento em Blocos
+    - Block, blocos = HD, físico
+    - Projetado para Amazon Elastic Compute Cloud (EC2)
+    - HDs são chamados "volumes"
+- **Como funciona?**
+    - Defina o tipo do volume
+    - Escolha tamanho e configurações
+    - Anexe o volume a uma instância EC2
+- **Mais ou menos assim**
+![image](https://github.com/user-attachments/assets/1207023f-446b-495a-a26e-1c340804e6d8)
+- **HDD**
+    - Mais lento
+    - Mais barato
+    - Dois tipos: Disco rígido frio e otimizado para throughput(taxa de transferencia)
+- **SSD**
+    - Mais rápido
+    - Mais caro
+    - Dois tipos: Volumes SSD de uso geral, IOPS(Input/Output Operations Per Second) provisionados
+- **Lembre-se**
+![image](https://github.com/user-attachments/assets/2d373126-1a19-45e5-aff4-1143f9661d46)
+- **Como funcionam os backups?**
+    - Snapshots
+    - Backup Incremental
+![image](https://github.com/user-attachments/assets/e89d5a37-89a4-4ed0-b01f-fdbfaa4774c2)
+![image](https://github.com/user-attachments/assets/6c06539d-6fa6-4a23-b607-6a116219b631)
+![image](https://github.com/user-attachments/assets/edb83a66-3308-4c94-906a-0cb196f4cf78)
+
+- Ele cria Snapshots somente com o que foi alterado e incluído no dia, não recria tudo todos os dias.
+
+- **Materiais de apoio**
+- https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/InstanceStorage.html
+- https://docs.aws.amazon.com/pt_br/ebs/latest/userguide/what-is-ebs.html
+- https://docs.aws.amazon.com/pt_br/ebs/latest/userguide/ebs-volume-types.html
+- https://docs.aws.amazon.com/pt_br/ebs/latest/userguide/ebs-snapshots.html
+
+#### Amazon S3
+- Serviço de armazenamento de objetos
+- S3 - Simple Storage Service
+
+- **O que é um objeto no S3?**
+![image](https://github.com/user-attachments/assets/4a951dcd-1d57-412f-8e68-c465ebe302d3)
+
+- **Composição de um objeto**
+    - Chave: Nome que você atribui ao projeto. Usado para recuperar o objeto.
+    - Valor: O conteúdo que você está armazenando.
+    - Metadados: Um conjunto de pares de nome-valor com o qual é possível armazenar informações relacionadas ao objeto.
+- **Onde estão os objetos?**
+![image](https://github.com/user-attachments/assets/eceecea1-5470-4299-9b20-cf28c2b4fe60)
+
+- **Analogia**
+![image](https://github.com/user-attachments/assets/63c42686-9cb2-4d75-96bb-618c8d0b75c1)
+
+- **Buckets S3**
+    - Antes de um upload do seus objetos, você precisa criar um Bucket.
+    - É um contêiner para objetos armazenados no Amazon S3.
+    - Você pode armazenar qualquer número de objetos em um bucket.
+    - Objetos podem ter de 0 até 5TB de tamanho.
+    - Você pode ter até 100 buckets na sua conta.
+- **Você ainda pode**
+    - Controlar acesso por objeto.
+    - Utilizar versionamento de objetos.
+- **Casos de uso**
+    - Data lakes
+    - Arquivamento de dados
+    - Hospedagem de sites estáticos
+- **Classes de armazenamento**
+    - Categorias para adequar melhor as necessidades de negócio e custo.
+    - Fatores importantes na seleção de uma categoria:
+        - Com que frequência você planeja recuperar seus dados?
+        - Seus dados precisam estar muito ou pouco disponíveis?
+    - **S3 Standard**
+        - Projetado para dados acessados com frequência
+        - Armazena dados em um mínimo de três Zonas de Disponibilidade
+        - Boa escolha para diversos casos de uso como sites, distribuição de conteúdo e análise de dados
+        - Custo mais alto
+    - **S3 Standard-Infrequent Access(S3 Standard-IA)**
+        - Semelhante ao S3 Standard
+        - Armazena dados em um mínimo de três Zonas de Disponibilidade
+        - Ideal para dados acessados com pouca frequência
+        - Taxa por GB de armazenamento e recuperação mais baixo
+    - **S3 One Zone-Infrequent Access (S3 One Zone-IA)**
+        - Tem um preço de armazenamento menor do que o S3 Standard - IA
+        - Armazena dados em uma única Zona de Disponibilidade
+        - Cenários: Você quer economizar custos com armazenamento e pode reproduzir facilmente seus dados em caso de falha na Zona de Disponibilidade.
+    - **S3 Intelligent-Tiering**
+        - Ideal para dados com padrões de acesso desconhecidos ou em alteração
+        - Gerencia automaticamente o ciclo de vida dos objetos armazenados otimizando custos.
+        - Requer uma pequena taxa mensal de monitoramento e automação por objeto
+    - **S3 Glacier Instant Retrieval**
+        - Ideal para dados de longa duração, raramente acessados mas que exigem recuperação rápida (milissegundos)
+        - Oferece acesso tão rápido quanto Standard e Standard-IA
+        - Ideal para dados acessados uma vez por trimestre
+    - **S3 Glacier Flexible Retrieval**
+        - Para dados que não requerem acesso imediato.
+        - Ideal para casos de uso de backups não urgentes, recuperação de desastres.
+        - Usuário pode escolher qual velocidade recuperação.
+        - Ideal para dados acessados 1 ou 2 vezes por ano.
+    - **S3 Glacier Deep Archive**
+        - Suporte a retenção e preservação digital de longo prazo para dados que podem ser acessados 1 ou 2 vezes por ano
+        - Ideal para empresas que precisam manter dados por conformidades legais por 7 a 10 anos.
+        - Recuperação de dados em até 12 horas.
+
+- **Como funciona?**
+![image](https://github.com/user-attachments/assets/dc604275-0af6-419d-9b09-09a7024d62b3)
+
+- **Material de apoio**
+- [O que é Amazon S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html)
+- [Visão geral de objetos Amazon S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/UsingObjects.html)
+- [Trabalhar com metadados de objeto](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/UsingMetadata.html)
+- [Visão geral dos buckets](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/UsingBucket.html) 
+- [Usando o versionamento em buckets do S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Versioning.html)
+- [Classes de armazenamento](https://aws.amazon.com/pt/s3/storage-classes/)
+- [Como o S3 Intelligent-Tiering funciona](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/intelligent-tiering-overview.html)

@@ -538,3 +538,170 @@ Software como serviço (Gmail)
 - [Usando o versionamento em buckets do S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Versioning.html)
 - [Classes de armazenamento](https://aws.amazon.com/pt/s3/storage-classes/)
 - [Como o S3 Intelligent-Tiering funciona](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/intelligent-tiering-overview.html)
+
+#### EFS - Amazon Elastic File System
+**O que é EFS?**
+- Elastic File System.
+- Fornece um sistema de arquivos.
+- Servless e totalmente elástico.
+- Escala até Petabytes.
+- Aumente e diminua conforme adição e remoção de arquivos.
+- Compatível com protocolo NFS (Network File System).
+- Pode ser acessado por EC2, Lambda, ECS.
+- Acesso simultâneo aos mesmos dados sem problemas de performance.
+
+**Classes de armazenamento**
+- Padrão (Instância regional): Standard e Standard - IA (Infrequent Access)
+- Uma AZ: One Zone e One Zone - IA (Infrequent Access)
+
+**Casos de uso**
+![image](https://github.com/user-attachments/assets/e87e280d-12e2-4bed-8c66-a2c538890fa0)
+![image](https://github.com/user-attachments/assets/379c543b-df08-4be5-bb24-83aeb137e8a9)
+
+**Materiais de apoio**
+- [Página do produto](https://aws.amazon.com/pt/efs/)
+- [O que é EFS?](https://docs.aws.amazon.com/pt_br/efs/latest/ug/whatisefs.html)
+
+#### Amazon Relational Database Service (RDS)
+
+**Banco de dados relacional**
+![image](https://github.com/user-attachments/assets/4a0b84bb-aa8f-4e70-b2b6-6fd6791b4a2e)
+
+**Requisitos**
+- Relação de dados
+- Facilita a compreensão das informações
+- SQL como linguagem de consulta
+- RDBMS (Sistema de gerenciamento de banco de dados)
+
+**Vendors**
+- PostgreSQL
+- Oracle
+- MySQL
+- Microsoft SQL Server
+
+**Como usar na nuvem?**
+![image](https://github.com/user-attachments/assets/fda7c20f-e06b-4f10-a69e-deb81ac2be98)
+
+**Se você usa, você gerencia**
+![image](https://github.com/user-attachments/assets/a1f5f095-5bd2-4d9f-8978-5045e6959e6d)
+
+- Fazer backup
+- Controlar armazenamento
+- Gerenciar recursos
+- Pode necessitar de uma pessoa capacitada em DBA.
+
+**Relational Database Service (RDS)**
+- Facilita configurações e provisionamento de hardware.
+- Patches automatizados.
+- Backups.
+- Redundância.
+- Failover e Recuperação de Desastres.
+
+**Mecanismos compatíveis**
+- MySQL
+- PostgreSQL
+- MariaDB
+- Oracle
+- SQL Server
+
+**Amazon Aurora**
+- Servless.
+- Mecanismos compatíveis: PostgreSQL e MySQL.
+- Preço um décimo de outros vendors.
+- Replicação multi-regional.
+- Até 15 réplicas de leituras.
+- Backups contínuo via S3.
+
+**Materiais de apoio**
+- [Página do RDS](https://aws.amazon.com/pt/rds/?p=ft&c=db8z=3)
+- [O que é RDS?](https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/Welcome.html)
+- [Página Amazon Aurora](https://aws.amazon.com/pt/rds/aurora/)
+- [Documentação Amazon Aurora](https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)
+
+#### DynamoDB
+- Banco de dados não relacional (NoSQL).
+- Gerenciado (Servless).
+- Performance abaixo de 10 milisegundos.
+- Escala automaticamente.
+- Replicação de dados regional.
+- Casos de uso: Muitos dados, baixa latência.
+
+**Estrutura de dados**
+- Tabela
+    ![image](https://github.com/user-attachments/assets/ed5c2e44-c78c-47a1-98ed-e4a978cb3c85)
+- Itens
+    ![image](https://github.com/user-attachments/assets/3c63947e-7a6c-4e61-a54c-206ab2a3cf57)
+- Atributos
+    ![image](https://github.com/user-attachments/assets/9bdb0950-694e-41f5-a7b3-22cbb179148e)
+
+**Resumindo**
+- Tabelas: Coleção de dados.
+- Itens: Grupo de atributos identificável.
+- Atributo: Dados existentes dentro de cada item.
+
+**Materiais de apoio**
+- [Página do produto](https://aws.amazon.com/pt/dynamodb)
+- [Documentação](https://docs.aws.amazon.com/pt_br/amazondynamodb/latest/developerguide/Introduction.html)
+- [DynamoDB - O quê, por que e quando usar](https://dev.to/oieduardorabelo/amazon-dynamodb-o-que-por-que-e-quando-usar-o-design-de-tabela-unica-com-dynamodb-ao9)
+
+#### Outros serviços de banco de dados
+
+**A escolha do banco de dados correto**
+- *A necessidade de negócio escolhe o tipo de banco de dados*
+
+**Amazon DocumentDB**
+- Banco de dados de documentos.
+- Gerenciamento de conteúdo.
+- Catálogos, perfis de usuário.
+- Compatível com cargas de trabalho MongoDB.
+- Não relacional.
+
+**Amazon Neptune**
+- Redes sociais, mecanismos de recomendação, detecção de fraude e gráficos de conhecimento.
+- Banco de dados de grafos.
+
+**Amazon QLDB**
+- Quantum Ledger Database.
+- Banco de dados serviço ledger.
+- Imutabilidade.
+- Indicado para históricos, registros digitais, transações financeiras.
+
+**Amazon DynamoDB Accelerator**
+- Chamado também de DAX.
+- Camada de cache nativa para otimizar tempo de leitura de dados.
+
+**Amazon Elasticache**
+- Camada de cache sobre banco de dados.
+- Compatível com Redis e Memcached.
+
+**Materiais de apoio**
+- [DAX](https://aws.amazon.com/pt/dynamodb/dax/)
+- [ElastiCache](https://aws.amazon.com/pt/elasticache/)
+- [DocumentDB](https://aws.amazon.com/pt/documentdb/)
+- [Neptune](https://aws.amazon.com/pt/neptune/)
+- [QLDB](https://aws.amazon.com/pt/qldb/)
+
+#### Big Data com Amazon Redshift
+**Cada vez mais dados, muitas fontes de dados.**
+![image](https://github.com/user-attachments/assets/db00a57d-10e5-424e-894f-a8ed7bacdfa1)
+![image](https://github.com/user-attachments/assets/571d4a23-99bc-452b-9a26-1f137464db93)
+
+**Perguntas..**
+- Quantas vendas o aplicativo fez desde o início do lançamento?
+- Quantos usuários fizeram cadastro na última hora?
+
+**Em um contexto de responder as perguntas acima precisamos nos perguntar sobre..**
+- Velocidade de gravação de dados.
+- Variedade de fontes de dados.
+- E quando os dados precisam responder com inteligência de negócio.
+
+**Amazon Redshift**
+- Serviço de Data Warehouse para análise de Big Data.
+- Oferece coletar informações de muitas fontes de dados.
+- Projeta relações e tendências de dados.
+- Usando Redshift Spectrum é possível rodar comandos SQL em cima de todas as fontes de dados agrupadas.
+
+**Materiais de apoio**
+- [Página do produto](https://aws.amazon.com/pt/redshift/)
+- [Documentação](https://docs.aws.amazon.com/pt_br/redshift/latest/gsg/getting-started.html)
+

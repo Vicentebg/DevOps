@@ -270,13 +270,15 @@ Remove todas as permissões de que não é o dono nem faz parte do grupo, em tod
 
 - `apt edit-sources` - Aparece um arquivo de texto com os repositórios oficiais do sistema operacional, caso precise colocar algum repositório que não esteja disponível será neste arquivo que será colocado.
 
-## Fedora, Red Hat & CentOS
+## Fedora, Debian, Red Hat & CentOS
 
 - `dnf --help` - Mais amigável similiar ao apt
 
 - `yum --help` - Normalmente utilizado para criação de scripts e mais antigo, similiar ao apt-get
 
 - `dnf update` - Diferente do Ubuntu ele já realiza a instalação dos pacotes *TOMAR CUIDADO* criar um backup antes
+
+- `dpkg -i nome_do_pacote.deb` - Debian para instalar algum pacote
 
 # Gerenciamento de discos
 

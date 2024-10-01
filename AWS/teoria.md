@@ -1,5 +1,12 @@
 # AWS
 
+## Mapa mental
+![imagem](https://github.com/user-attachments/assets/bc33b64c-7d74-43a5-9463-2d1bbb204739)
+
+## Serviços equivalentes de outras plataformas
+![aws](https://github.com/user-attachments/assets/b5e87249-a02e-49c2-be62-b8d3a1c1ff8f)
+
+
 ## Infraestrutura Global AWS
 
 - **Regiões AZ**: Regiões geográficas.

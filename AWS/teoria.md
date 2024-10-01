@@ -635,10 +635,13 @@ Software como serviço (Gmail)
 
 **Estrutura de dados**
 - Tabela
+  
     ![image](https://github.com/user-attachments/assets/ed5c2e44-c78c-47a1-98ed-e4a978cb3c85)
 - Itens
+  
     ![image](https://github.com/user-attachments/assets/3c63947e-7a6c-4e61-a54c-206ab2a3cf57)
 - Atributos
+  
     ![image](https://github.com/user-attachments/assets/9bdb0950-694e-41f5-a7b3-22cbb179148e)
 
 **Resumindo**

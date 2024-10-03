@@ -715,3 +715,57 @@ Software como serviço (Gmail)
 - [Página do produto](https://aws.amazon.com/pt/redshift/)
 - [Documentação](https://docs.aws.amazon.com/pt_br/redshift/latest/gsg/getting-started.html)
 
+## Segurança na Nuvem com AWS
+### Modelo de responsabilidade compartilhada
+- Parte da segurança é do cliente(Segurança NA nuvem) e parte da AWS(Segurança DA nuvem)
+![image](https://github.com/user-attachments/assets/7d434576-c9d3-4b63-ba69-389c4112ac6b)
+
+![image](https://github.com/user-attachments/assets/252c6811-bd58-41f3-b02a-46307ba02b45)
+
+**Segurança NA Nuvem**
+- Responsável: Cliente
+- Controle total sobre o conteúdo
+- Controle de acesso e permissões
+- Patches de segurança
+- Muda conforme o serviço utilizado
+
+**Segurança DA Nuvem**
+- Responsável: Aws
+- Segurança física dos data centers
+- Infraestrutura de hardware e software
+- Infraestrutura de rede
+- Infraestrutura de virtualização
+
+**Materiais de apoio**
+- [Modelo de responsabilidade compartilhada](https://aws.amazon.com/pt/compliance/shared-responsibility-model/)
+- [Vídeo](https://www.youtube.com/watch?v=Hg_N2SpJYqM)
+
+### Criptografia
+- Criptografia é a prática de proteger informações por meio de uso de algoritmos codificados, hashes e assinaturas.
+
+**Informações que devemos proteger**
+- Repouso(dados que não estão tráfegando): Dados em volumes EBS, em buckets S3
+- Trânsito: Dados que estão sendo enviados de uma origem para um destino
+
+**AWS Key Management Service**
+- KMS
+- Gerenciado
+- Gestão e controle de  chaves criptográficas
+- Controle de acesso e autorização
+
+**Criptografia  em repouso  com KMS**
+- Como é enviado?
+![image](https://github.com/user-attachments/assets/a6344d6a-430a-4726-a795-1e5a0f2c5eab)
+
+- Como é salvo
+![image](https://github.com/user-attachments/assets/e3965ae3-6cc1-438a-b194-d8ee40598cb1)
+
+**Criptografia  em trânsito com KMS**
+![image](https://github.com/user-attachments/assets/3053a810-e8e8-4ae6-9a3d-67e380b8b8f9)
+
+**Materiais de apoio**
+- [O que é criptografia?](https://aws.amazon.com/pt/what-is/cryptography/)
+- [AWS Key Management Service](https://aws.amazon.com/pt/kms/)
+- [Recursos do AWS Key Management Service](https://aws.amazon.com/pt/kms/features/)
+
+### Gerenciamento de Acessos

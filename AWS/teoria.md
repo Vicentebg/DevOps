@@ -705,3 +705,27 @@ Software como serviço (Gmail)
 - [Página do produto](https://aws.amazon.com/pt/redshift/)
 - [Documentação](https://docs.aws.amazon.com/pt_br/redshift/latest/gsg/getting-started.html)
 
+**Mais informações**
+
+![image](https://github.com/user-attachments/assets/c6117c94-3f23-4071-b4dd-f556a00c4bdf)
+
+**Amazon RDS**
+- Fornece serviços de banco de dados relacional na nuvem com suporte para os seguintes mecanismos de banco de dados:
+    - Amazon Aurora
+    - PostgreSQL
+    - MySQL
+    - MariaDB
+    - Oracle
+    - Microsoft SQL Server
+
+**Amazon DynamoDB**
+- Banco de dados NoSQL que é compatível com modelos de armazenamento de documentos e de chave-valor.
+
+**Amazon Redshift**
+- Serviço de data warehouse rápido e totalmente gerenciado.
+
+**Amazon Neptune**
+- Serviço de banco de dados gráfico rápido, confiável e totalmente gerenciado que facilita a criação e a execução de aplicações que trabalham com conjuntos de dados altamente conectados.
+
+**Amazon ElastiCache**
+- Cache de dados na memória que oferece suporte a um mecanismo Redis ou Memcached totalmente gerenciado.

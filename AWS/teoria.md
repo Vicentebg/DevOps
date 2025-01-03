@@ -1,5 +1,12 @@
 # AWS
 
+## Mapa mental
+![imagem](https://github.com/user-attachments/assets/bc33b64c-7d74-43a5-9463-2d1bbb204739)
+
+## Serviços equivalentes de outras plataformas
+![aws](https://github.com/user-attachments/assets/b5e87249-a02e-49c2-be62-b8d3a1c1ff8f)
+
+
 ## Infraestrutura Global AWS
 
 - **Regiões AZ**: Regiões geográficas.
@@ -628,10 +635,13 @@ Software como serviço (Gmail)
 
 **Estrutura de dados**
 - Tabela
+  
     ![image](https://github.com/user-attachments/assets/ed5c2e44-c78c-47a1-98ed-e4a978cb3c85)
 - Itens
+  
     ![image](https://github.com/user-attachments/assets/3c63947e-7a6c-4e61-a54c-206ab2a3cf57)
 - Atributos
+  
     ![image](https://github.com/user-attachments/assets/9bdb0950-694e-41f5-a7b3-22cbb179148e)
 
 **Resumindo**
@@ -705,27 +715,57 @@ Software como serviço (Gmail)
 - [Página do produto](https://aws.amazon.com/pt/redshift/)
 - [Documentação](https://docs.aws.amazon.com/pt_br/redshift/latest/gsg/getting-started.html)
 
-**Mais informações**
+## Segurança na Nuvem com AWS
+### Modelo de responsabilidade compartilhada
+- Parte da segurança é do cliente(Segurança NA nuvem) e parte da AWS(Segurança DA nuvem)
+![image](https://github.com/user-attachments/assets/7d434576-c9d3-4b63-ba69-389c4112ac6b)
 
-![image](https://github.com/user-attachments/assets/c6117c94-3f23-4071-b4dd-f556a00c4bdf)
+![image](https://github.com/user-attachments/assets/252c6811-bd58-41f3-b02a-46307ba02b45)
 
-**Amazon RDS**
-- Fornece serviços de banco de dados relacional na nuvem com suporte para os seguintes mecanismos de banco de dados:
-    - Amazon Aurora
-    - PostgreSQL
-    - MySQL
-    - MariaDB
-    - Oracle
-    - Microsoft SQL Server
+**Segurança NA Nuvem**
+- Responsável: Cliente
+- Controle total sobre o conteúdo
+- Controle de acesso e permissões
+- Patches de segurança
+- Muda conforme o serviço utilizado
 
-**Amazon DynamoDB**
-- Banco de dados NoSQL que é compatível com modelos de armazenamento de documentos e de chave-valor.
+**Segurança DA Nuvem**
+- Responsável: Aws
+- Segurança física dos data centers
+- Infraestrutura de hardware e software
+- Infraestrutura de rede
+- Infraestrutura de virtualização
 
-**Amazon Redshift**
-- Serviço de data warehouse rápido e totalmente gerenciado.
+**Materiais de apoio**
+- [Modelo de responsabilidade compartilhada](https://aws.amazon.com/pt/compliance/shared-responsibility-model/)
+- [Vídeo](https://www.youtube.com/watch?v=Hg_N2SpJYqM)
 
-**Amazon Neptune**
-- Serviço de banco de dados gráfico rápido, confiável e totalmente gerenciado que facilita a criação e a execução de aplicações que trabalham com conjuntos de dados altamente conectados.
+### Criptografia
+- Criptografia é a prática de proteger informações por meio de uso de algoritmos codificados, hashes e assinaturas.
 
-**Amazon ElastiCache**
-- Cache de dados na memória que oferece suporte a um mecanismo Redis ou Memcached totalmente gerenciado.
+**Informações que devemos proteger**
+- Repouso(dados que não estão tráfegando): Dados em volumes EBS, em buckets S3
+- Trânsito: Dados que estão sendo enviados de uma origem para um destino
+
+**AWS Key Management Service**
+- KMS
+- Gerenciado
+- Gestão e controle de  chaves criptográficas
+- Controle de acesso e autorização
+
+**Criptografia  em repouso  com KMS**
+- Como é enviado?
+![image](https://github.com/user-attachments/assets/a6344d6a-430a-4726-a795-1e5a0f2c5eab)
+
+- Como é salvo
+![image](https://github.com/user-attachments/assets/e3965ae3-6cc1-438a-b194-d8ee40598cb1)
+
+**Criptografia  em trânsito com KMS**
+![image](https://github.com/user-attachments/assets/3053a810-e8e8-4ae6-9a3d-67e380b8b8f9)
+
+**Materiais de apoio**
+- [O que é criptografia?](https://aws.amazon.com/pt/what-is/cryptography/)
+- [AWS Key Management Service](https://aws.amazon.com/pt/kms/)
+- [Recursos do AWS Key Management Service](https://aws.amazon.com/pt/kms/features/)
+
+### Gerenciamento de Acessos
